@@ -5,13 +5,13 @@ export default function Home() {
 	return (
 		<div>
 			<Head>
-				<title>jeremiahhowden</title>
-				<meta name="description" content="Welcome to my personal website" />
+				<title>Jeremiah's Website</title>
+				<meta name="description" content="This is my website, built with nextjs, typescript, and tailwind, deployed with vercel, and includes a collection of different facets of my life." />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
 			<main>
-
+				yo
 			</main>
 
 			<footer>
