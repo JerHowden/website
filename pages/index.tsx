@@ -5,7 +5,7 @@ export default function Home() {
 	return (
 		<div>
 			<Head>
-				<title>Jeremiah's Website</title>
+				<title>Jeremiah`&apos;`s Website</title>
 				<meta name="description" content="This is my website, built with nextjs, typescript, and tailwind, deployed with vercel, and includes a collection of different facets of my life." />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
