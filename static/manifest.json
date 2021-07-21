@@ -1,0 +1,16 @@
+{
+    "short_name": "Jeremiah",
+    "name": "Jeremiah Howden",
+    "icons": [
+      {
+        "src": "/jh.svg",
+        "type": "image/svg+xml",
+        "sizes": "any"
+      }
+    ],
+    "start_url": "/?source=pwa",
+    "background_color": "#444444",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#444444"
+  }
