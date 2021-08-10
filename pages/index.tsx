@@ -12,7 +12,7 @@ export default function Home() {
 				<link rel="icon" href="/jhdot.svg" />
 			</Head>
 
-			<div className='flex flex-row'>
+			<div className='flex flex-row bg-gray-700'>
 				<Sidebar />
 				<MobileNav />
 				<main>
