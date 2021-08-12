@@ -1,7 +1,9 @@
 import Head from 'next/head'
-import MobileNav from '../components/MobileNav'
-
-import Sidebar from '../components/Sidebar'
+import Header from '../components/Header'
+import About from '../components/About'
+import Projects from '../components/Projects'
+import Resume from '../components/Resume'
+import Footer from '../components/Footer'
 
 export default function Home() {
 	return (
@@ -12,91 +14,16 @@ export default function Home() {
 				<link rel="icon" href="/jhdot.svg" />
 			</Head>
 
-			<div className='flex flex-row bg-gray-700'>
-				<Sidebar />
-				<MobileNav />
-				<main>
-					yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>yo
-					<br/>
-				</main>
-			</div>
-
-			<footer className='flex flex-row bg-gray-900 h-96'>
-				<div className='flex w-2/5'>
-					<div>
-
-					</div>
+			<main className='flex flex-col items-center justify-between min-h-screen bg-gradient-to-br from-teal-200 to-teal-500'>
+				<div className='w-4/5 min-h-full lg:w-1/2'>
+					<Header />
+					<About />
+					<Projects />
+					<Resume />
+					<Footer />
 				</div>
-				<div className='flex w-3/5'>
+			</main>
 
-				</div>
-			</footer>
 		</div>
 	)
 }

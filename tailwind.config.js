@@ -13,13 +13,14 @@ module.exports = {
       gray: colors.trueGray,
       red: colors.red,
       teal: colors.teal,
+      green: colors.emerald,
       sky: colors.sky,
       indigo: colors.indigo,
       violet: colors.violet,
     },
     extend: {
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
       },
     },
   },
