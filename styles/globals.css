@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .link {
+        @apply inline-block p-1 font-sans font-normal tracking-wider after:scale-x-0 after:block after:duration-300 after:border-b after:border-gray-900 hover:after:scale-x-100;
+    }
+}

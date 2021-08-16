@@ -6,7 +6,7 @@ function About(): JSX.Element {
 
     return(
         <div className='flex flex-row items-baseline justify-between w-full'>
-            <h1 className='flex font-sans font-black text-gray-800 text-7xl '>about</h1>
+            <h1 className='flex font-sans text-4xl font-black text-gray-800 '>about</h1>
             <div className='flex'>
                 <p>
                     yo
