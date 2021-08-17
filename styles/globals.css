@@ -4,6 +4,20 @@
 
 @layer components {
     .link {
-        @apply inline-block p-1 font-sans font-normal tracking-wider after:scale-x-0 after:block after:duration-300 after:border-b after:border-gray-900 hover:after:scale-x-100;
+        @apply inline-block p-1 font-sans font-normal tracking-wide text-gray-200 hover:text-white after:scale-x-0 after:block after:duration-300 after:border-b after:border-white hover:after:scale-x-100;
     }
+}
+
+html {
+    background: linear-gradient(9deg, #0f766e, #4338ca, #9f1239, #4338ca);
+    background-size: 800% 800%;
+    animation: bg 60s ease infinite;
+
+    color: white;
+}
+
+@keyframes bg {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
 }
