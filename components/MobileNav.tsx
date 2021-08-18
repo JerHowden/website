@@ -23,9 +23,9 @@ function MobileNav(): JSX.Element {
 
     return(
         <div className='fixed z-50 w-10 h-10 bg-red-700 rounded-md left-1/2 mobile-nav md:hidden bottom-1/2'>
-            <div className='text-white' onClick={() => setOpen(prevOpen => !prevOpen)}>
+            {/* <div className='text-white' onClick={() => setOpen(prevOpen => !prevOpen)}>
                 <FontAwesomeIcon icon='bars'/>
-            </div>
+            </div> */}
             <div><Button href='/about' icon='address-card'/></div>
             <div><Button href='/blog' icon='blog'/></div>
             <div><Button href='' icon='home'/></div>
