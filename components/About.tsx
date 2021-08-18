@@ -4,7 +4,7 @@ function About(): JSX.Element {
 
 
     return(
-        <div className='flex flex-col items-baseline w-full max-w-5xl px-12 py-3 justify-items-center'>
+        <div className='flex flex-col items-baseline w-full max-w-5xl px-12 py-3 bg-black bg-opacity-25 justify-items-center'>
             <h1 className='flex w-full text-lg font-bold text-teal-200 mix-blend-luminosity'>
                 about
             </h1>

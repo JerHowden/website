@@ -1,8 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-function Footer(): JSX.Element {
+function Footer(props: { spotify: any }): JSX.Element {
 
 
     return(
@@ -24,6 +25,17 @@ function Footer(): JSX.Element {
                         <div className='text-sm lg:text-xl ml-0.5'>jeremiah howden</div>
                         <div className='-mt-1 text-xs text-gray-300 lg:text-base'>software developer</div>
                     </div>
+                    {
+                        props.spotify ?
+                            <div className='flex flex-row items-center gap-x-2'>
+                                <FontAwesomeIcon icon={['fab', 'spotify']} className='w-4 h-4 sm:w-6 sm:h-6' />
+                                <span>
+                                    { props.spotify.item.name }
+                                </span>
+                            </div>
+                        :
+                            <div/>
+                    }
                     <div className='flex self-end text-gray-500'>Copyright © 2021 Jeremiah Howden</div>
                 </div>
                 <div className='flex flex-col text-right'>
