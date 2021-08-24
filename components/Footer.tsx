@@ -8,7 +8,7 @@ import fetcher from '../lib/fetcher'
 
 function Footer(): JSX.Element {
 
-	const { data } = useSWR('/api/now-playing', fetcher) || {}
+	const { data } = useSWR('/api/now-playing', fetcher)
 	console.log(data)
 
 	return(
@@ -31,11 +31,11 @@ function Footer(): JSX.Element {
 						<div className='-mt-1 text-xs text-gray-300 lg:text-base'>software developer</div>
 					</div>
 					<div className='flex flex-row items-center text-gray-400 gap-x-2'>
-						<FontAwesomeIcon icon={['fab', 'spotify']} className={`w-4 h-4 sm:w-7 sm:h-7 ${data.isPlaying ? 'text-green-500 animate-pulse md:h-9 md:w-9' : ''}`} />
-						{data.isPlaying ?
-							<a className={`flex flex-col gap-x-2 ${data.songUrl ? 'group ' : ' pointer-events-none'}`} href={data.songUrl || ''}>
-								<div className='text-sm font-medium text-green-400 md:text-base group-hover:text-green-300'>{data.title || 'Runway Houses City Clouds'}</div>
-								<div className='text-xs font-light text-green-500 group-hover:text-green-400'>{data.artist || 'Tame Impala, Mac Demarco'}</div>
+						<FontAwesomeIcon icon={['fab', 'spotify']} className={`w-4 h-4 sm:w-7 sm:h-7 ${data?.isPlaying ? 'text-green-500 animate-pulse md:h-9 md:w-9' : ''}`} />
+						{data?.isPlaying ?
+							<a className={`flex flex-col gap-x-2 ${data?.songUrl ? 'group ' : ' pointer-events-none'}`} href={data?.songUrl || ''}>
+								<div className='text-sm font-medium text-green-400 md:text-base group-hover:text-green-300'>{data?.title || 'Runway Houses City Clouds'}</div>
+								<div className='text-xs font-light text-green-500 group-hover:text-green-400'>{data?.artist || 'Tame Impala, Mac Demarco'}</div>
 							</a>
 						:
 							<div>Not Playing</div>
@@ -61,9 +61,7 @@ function Footer(): JSX.Element {
 					</div>
 					<div className='flex-1'>
 						<a href='https://dev.to/jerhowden' title='dev blog ↗' className='p-0 lg:text-lg link'>
-							<span className='hidden sm:inline'>dev</span>
-							{' '}
-							<span>blog</span>
+							dev blog
 						</a>
 					</div>
 				</div>
