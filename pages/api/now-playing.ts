@@ -10,6 +10,7 @@ export default async function handler(_: any, res: { status: (arg0: number) => {
 	}
 
 	const song = await response.json()
+	console.log('\n --- song ---\n', song, '\n')
 		
 	if (song.item === null) {
 		console.log('Not playing anything in now-playing.ts \n', response)

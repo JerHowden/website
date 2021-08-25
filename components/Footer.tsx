@@ -9,7 +9,7 @@ import fetcher from '../lib/fetcher'
 function Footer(): JSX.Element {
 
 	const { data } = useSWR('/api/now-playing', fetcher)
-	console.log(data)
+	console.log('data', data)
 
 	return(
 		<footer className='flex flex-col w-full h-auto px-12 pb-12 bg-gray-800 border-t border-gray-700'>
