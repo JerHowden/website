@@ -13,7 +13,7 @@ interface types {
 
 function ProjectEmbed({ title, url, tagIDs, desc, githubURL}: types): JSX.Element {
 
-    const size = 32
+    const size = 24
 
     function Tag(tagID: string): JSX.Element {
         switch(tagID) {
@@ -42,12 +42,12 @@ function ProjectEmbed({ title, url, tagIDs, desc, githubURL}: types): JSX.Elemen
             <div>
                 <a href={url} title={title + ' ↗'} className='p-0 title link'>{title}</a>
             </div>
-            <div className='mb-4 text-lg font-light tracking-wide text-gray-500'>
+            <div className='mb-6 text-lg font-light tracking-wide text-gray-500'>
                 {desc}
             </div>
             <div className='flex flex-row align-bottom gap-x-3'>
                 {tagIDs.map((tag, key) => 
-                    <span key={key} className='flex text-gray-800 align-bottom dark:text-gray-200' style={{ 'minWidth': size }}>{Tag(tag)}</span>
+                    <span key={key} className='flex text-gray-800 align-bottom dark:text-gray-200' style={{ 'minWidth': size, 'maxHeight': size }}>{Tag(tag)}</span>
                 )}
             </div>
         </div>
