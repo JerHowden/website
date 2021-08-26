@@ -21,6 +21,7 @@ const getAccessToken = async () => {
 
 export const getNowPlaying = async () => {
 	const response = await getAccessToken()
+	// console.log('response response', response)
 
 	return fetch(NOW_PLAYING_ENDPOINT, {
 		headers: {
