@@ -12,9 +12,13 @@ export default function Home() {
 	return (
 		<div className='flex flex-col bg'>
 			<Head>
-				<title>{'jeremiah howden'}</title>
-				<meta name="description" content="This is my website, built with nextjs, typescript, and tailwind, deployed with vercel, and includes a collection of different facets of my life." />
-				<link rel="icon" href="/jhdot.svg" />
+				<title>{'Jeremiah Howden'}</title>
+				<meta name='description' content='This is my website, built with next.js, typescript, and tailwind, deployed with vercel. Take a look around!'/>
+				<link rel='icon' href='/jhdot.svg'/>
+				<link rel='apple-touch-icon' href='/jhdot.svg'/>
+				<link rel='apple-touch-icon' href='/jhdot-white.png' media='(prefers-color-scheme:no-preference)'/>
+				<link rel='apple-touch-icon' href='/jhdot-black.png' media='(prefers-color-scheme:dark)'/>
+				<link rel='apple-touch-icon' href='/jhdot-white.png' media='(prefers-color-scheme:light)'/>
 			</Head>
 
 			<main className=''>
