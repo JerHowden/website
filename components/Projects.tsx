@@ -34,7 +34,7 @@ function Projects(): JSX.Element {
                     <ProjectEmbed
                         title='Athena'
                         url='https://github.com/Athena-Capstone-2020/athena-mobile-app'
-                        tagIDs={['github', 'reactnative', 'js', 'googlecloud']}
+                        tagIDs={['github', 'reactnative', 'js', 'googlecloud', 'figma']}
                         githubURL='https://github.com/Athena-Capstone-2020/athena-mobile-app'
                         desc='University — 2020'
                     />
