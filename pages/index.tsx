@@ -10,7 +10,7 @@ import Footer from '../components/Footer'
 export default function Home() {
 
 	return (
-		<div className='flex flex-col'>
+		<div className='flex flex-col bg'>
 			<Head>
 				<title>{'jeremiah howden'}</title>
 				<meta name="description" content="This is my website, built with nextjs, typescript, and tailwind, deployed with vercel, and includes a collection of different facets of my life." />
@@ -18,7 +18,7 @@ export default function Home() {
 			</Head>
 
 			<main className=''>
-				<div className='flex flex-col gap-y-4'>
+				<div className='flex flex-col items-center gap-y-4'>
 					<Header />
 					<About />
 					<Projects />
