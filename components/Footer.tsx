@@ -43,25 +43,25 @@ function Footer(): JSX.Element {
 						}
 						<span className={`hidden text-xl text-black ${data?.isPlaying && data?.songUrl ? 'group-hover:inline' : ''} dark:text-white`}>↗</span>
 					</div>
-					<div className='flex text-gray-500'>© {new Date().getFullYear()} Jeremiah Howden</div>
+					<div className='flex text-gray-600 dark:text-gray-400'>© {new Date().getFullYear()} Jeremiah Howden</div>
 				</div>
-				<div className='flex flex-col text-left sm:text-right'>
-					<div className='flex-1'>
+				<div className='flex flex-col gap-y-0.5 text-left sm:text-right'>
+					<div className=''>
 						<Link href='/resume'>
-							<a title='résumé' className='p-0 lg:text-lg link'>resume</a>
+							<a title='résumé' className='p-0.5 lg:text-lg link'>resume</a>
 						</Link>
 					</div>
-					<div className='flex-1'>
-						<a href='https://www.github.com/JerHowden' title='github ↗' className='p-0 lg:text-lg link'>github</a>
+					<div className=''>
+						<a href='https://www.github.com/JerHowden' title='github ↗' className='p-0.5 lg:text-lg link'>github</a>
 					</div>
-					<div className='flex-1'>
-						<a href='https://www.linkedin.com/in/jeremiah-howden' title='linkedin ↗' className='p-0 lg:text-lg link'>linkedin</a>
+					<div className=''>
+						<a href='https://www.linkedin.com/in/jeremiah-howden' title='linkedin ↗' className='p-0.5 lg:text-lg link'>linkedin</a>
 					</div>
-					<div className='flex-1'>
-						<a href='https://www.twitter.com/jeremiah_howden' title='twitter ↗' className='p-0 lg:text-lg link'>twitter</a>
+					<div className=''>
+						<a href='https://www.twitter.com/jeremiah_howden' title='twitter ↗' className='p-0.5 lg:text-lg link'>twitter</a>
 					</div>
-					<div className='flex-1'>
-						<a href='https://dev.to/jerhowden' title='dev blog ↗' className='p-0 lg:text-lg link'>
+					<div className=''>
+						<a href='https://dev.to/jerhowden' title='dev blog ↗' className='p-0.5 lg:text-lg link'>
 							dev blog
 						</a>
 					</div>
