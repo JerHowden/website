@@ -43,7 +43,7 @@ function ProjectEmbed({ title, url, tagIDs, desc, githubURL}: types): JSX.Elemen
 			<div>
 				<a href={url} title={title + ' ↗'} className='p-0 title link'>{title}</a>
 			</div>
-			<div className='mb-6 text-lg font-light tracking-wide text-gray-500'>
+			<div className='mb-6 text-lg font-light tracking-wide text-gray-600 dark:text-gray-400'>
 				{desc}
 			</div>
 			<div className='flex flex-row align-bottom gap-x-3'>

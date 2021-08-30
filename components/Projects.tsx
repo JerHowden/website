@@ -12,7 +12,7 @@ function Projects(): JSX.Element {
                 <div className='grid w-full grid-cols-1 gap-4 md:grid-cols-2'>
                     <ProjectEmbed
                         title='jeremiahhowden.com'
-                        url='https://jeremiahhowden.com#you-were-already-here-lol'
+                        url='https://github.com/JerHowden/website'
                         tagIDs={['github', 'react', 'ts', 'nextjs', 'tailwind', 'spotify', 'vercel']}
                         githubURL='https://github.com/JerHowden/website'
                         desc='Personal — 2021'

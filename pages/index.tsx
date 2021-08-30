@@ -23,11 +23,8 @@ export default function Home() {
 
 			<main className=''>
 				<div className='flex flex-col items-center gap-y-4'>
-					<Header />
 					<About />
 					<Projects />
-					<Resume />
-					<Footer />
 				</div>
 			</main>
 
