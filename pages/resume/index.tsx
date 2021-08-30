@@ -1,15 +1,9 @@
 import React from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 
 function Resume(): JSX.Element {
-
-    const download = async () => {
-        const req = await fetch('/api/download-resume');
-        const newData = await req.json();
-
-        return newData;
-    }
-
+    
     return(
         <div className='w-full h-full max-w-3xl p-4'>
 
@@ -23,12 +17,9 @@ function Resume(): JSX.Element {
 				<link rel='apple-touch-icon' href='/jhdot-white.png' media='(prefers-color-scheme:dark)'/>
 			</Head>
 
-            <button 
-                className='w-full h-full text-left pointer-events-none md:pointer-events-auto'
-                title='Download ↓'
-                onClick={() => download()}
-            >
-                <div className='flex flex-col px-4 py-12 border border-black dark:border-white gap-y-8 md:gap-y-6 hover:bg-black dark:hover:bg-white backdrop-filter backdrop-blur dark:hover:bg-opacity-25 hover:bg-opacity-25 backdrop-saturate-200'>
+            <Link href='/resume.pdf'>
+                <a className='w-full h-full' title='Download ↓'>
+                <div className='flex flex-col px-4 py-12 border border-black 2xl:px-8 2xl:py-16 dark:border-white gap-y-8 md:gap-y-6 hover:bg-black dark:hover:bg-white backdrop-filter backdrop-blur dark:hover:bg-opacity-10 hover:bg-opacity-10 backdrop-saturate-200'>
                     <div>
                         <h1 className='text-4xl font-bold text-black dark:text-white'>Jeremiah Howden</h1>
                         <div className='flex flex-col text-sm text-gray-600 md:flex-row gap-x-2 dark:text-gray-400'>
@@ -50,10 +41,10 @@ function Resume(): JSX.Element {
                             <div>
                                 <div className='-mb-1 text-lg font-semibold'>Software Developer</div>
                                 <ul className='ml-4 text-sm text-gray-800 list-disc dark:text-gray-200'>
-                                    <li>Developed and led full-stack web applications for internal processes leveraging technologies including ReactJS, Golang, PHP, MySQL, and Docker</li>
-                                    <li>Orchestrated and engaged in agile scrum development on multiple projects with team members</li>
-                                    <li>Gathered comprehensive user requirements for understanding design and functionality implications</li>
-                                    <li>Wrote unit tests and documentation for bug fixes and updates</li>
+                                    <li>Developed and led full-stack web applications for internal processes leveraging technologies including ReactJS, Golang, PHP, MySQL, and Docker.</li>
+                                    <li>Orchestrated and engaged in agile scrum development on multiple projects with team members.</li>
+                                    <li>Gathered comprehensive user requirements for understanding design and functionality implications.</li>
+                                    <li>Wrote unit tests and documentation for bug fixes and updates.</li>
                                 </ul>
                             </div>
                             <div className='ml-0 md:ml-4'>
@@ -66,15 +57,15 @@ function Resume(): JSX.Element {
                             <div className='ml-0 md:ml-4'>
                                 <div className='-mb-1 text-lg font-semibold text-gray-800 underline dark:text-gray-200'>TackleBox</div>
                                 <ul className='ml-4 text-sm text-gray-700 list-disc dark:text-gray-300'>
-                                    <li>Internal application built on ReactJS and Flask that monitors client domains for phishing attacks</li>
-                                    <li>Produced front-end MVP, mentored UCSB capstone team in ReactJS to continue with risk analysis</li>
+                                    <li>Internal application built on ReactJS and Flask that monitors client domains for phishing attacks.</li>
+                                    <li>Produced front-end MVP, mentored UCSB capstone team in ReactJS to continue with risk analysis.</li>
                                 </ul>
                             </div>
                             <div className='ml-0 md:ml-4'>
                                 <div className='-mb-1 text-lg font-semibold text-gray-800 underline dark:text-gray-200'>Invoice System</div>
                                 <ul className='ml-4 text-sm text-gray-700 list-disc dark:text-gray-300'>
-                                    <li>Enterprise-level application used by all Novacoast departments rely on for tracking billing and invoicing clients leveraging ReactJS, Golang, and MySQL</li>
-                                    <li>Lead developer responsible for all stages of development and deployment</li>
+                                    <li>Enterprise-level application used by all Novacoast departments rely on for tracking billing and invoicing clients leveraging ReactJS, Golang, and MySQL.</li>
+                                    <li>Lead developer responsible for all stages of development and deployment.</li>
                                 </ul>
                             </div>
                         </div>
@@ -126,7 +117,8 @@ function Resume(): JSX.Element {
                         </ul>
                     </div>
                 </div>
-            </button>
+                </a>
+            </Link>
         </div>
     )
 }
