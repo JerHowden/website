@@ -41,7 +41,7 @@ function Resume(): JSX.Element {
                             <div>
                                 <div className='-mb-1 text-lg font-semibold'>Software Developer</div>
                                 <ul className='ml-4 text-sm text-gray-800 list-disc dark:text-gray-200'>
-                                    <li>Developed and led full-stack web applications for internal processes leveraging technologies including ReactJS, Golang, PHP, MySQL, and Docker.</li>
+                                    <li>Developed and led full-stack web applications for internal processes leveraging technologies including React, Golang, PHP, MySQL, and Docker.</li>
                                     <li>Orchestrated and engaged in agile scrum development on multiple projects with team members.</li>
                                     <li>Gathered comprehensive user requirements for understanding design and functionality implications.</li>
                                     <li>Wrote unit tests and documentation for bug fixes and updates.</li>
@@ -57,14 +57,14 @@ function Resume(): JSX.Element {
                             <div className='ml-0 md:ml-4'>
                                 <div className='-mb-1 text-lg font-semibold text-gray-800 underline dark:text-gray-200'>TackleBox</div>
                                 <ul className='ml-4 text-sm text-gray-700 list-disc dark:text-gray-300'>
-                                    <li>Internal application built on ReactJS and Flask that monitors client domains for phishing attacks.</li>
-                                    <li>Produced front-end MVP, mentored UCSB capstone team in ReactJS to continue with risk analysis.</li>
+                                    <li>Internal application built on React and Flask that monitors client domains for phishing attacks.</li>
+                                    <li>Produced front-end MVP, mentored UCSB capstone team in React to continue with risk analysis.</li>
                                 </ul>
                             </div>
                             <div className='ml-0 md:ml-4'>
                                 <div className='-mb-1 text-lg font-semibold text-gray-800 underline dark:text-gray-200'>Invoice System</div>
                                 <ul className='ml-4 text-sm text-gray-700 list-disc dark:text-gray-300'>
-                                    <li>Enterprise-level application used by all Novacoast departments rely on for tracking billing and invoicing clients leveraging ReactJS, Golang, and MySQL.</li>
+                                    <li>Enterprise-level application used by all Novacoast departments for tracking billing and invoicing clients leveraging React, Golang, and MySQL.</li>
                                     <li>Lead developer responsible for all stages of development and deployment.</li>
                                 </ul>
                             </div>
@@ -89,13 +89,13 @@ function Resume(): JSX.Element {
                                 <div className='-mb-1 text-lg font-semibold text-gray-800 underline dark:text-gray-200'>Athena Mobile Application</div>
                                 <ul className='ml-4 text-sm text-gray-700 list-disc dark:text-gray-300'>
                                     <li>University capstone project using React Native, Expo, and Firebase in a team of five with full software design specification.</li>
-                                    <li>Leading front-end team through React Native and design principles.</li>
+                                    <li>Led front-end team through React Native and design principles.</li>
                                 </ul>
                             </div>
                             <div className='ml-0 md:ml-4'>
                                 <div className='-mb-1 text-lg font-semibold text-gray-800 underline dark:text-gray-200'>Texas Tech Freshman Guide</div>
                                 <ul className='ml-4 text-sm text-gray-700 list-disc dark:text-gray-300'>
-                                    <li>Final project for an HCI course using ReactJS and Mapbox, deployed with GitHub Pages.</li>
+                                    <li>Final project for an HCI course using React and Mapbox, deployed with GitHub Pages.</li>
                                     <li>Created a custom interactive map of the TTU campus to help students find their dorms, classes, and restaurants.</li>
                                 </ul>
                             </div>
@@ -106,7 +106,7 @@ function Resume(): JSX.Element {
                         <hr className='mb-2 border-black dark:border-white' />
                         <ul className='flex flex-col text-sm text-gray-700 dark:text-gray-300 gap-y-2 md:gap-y-0.5'>
                             <li>
-                                <span className='text-base font-semibold text-gray-800 dark:text-gray-200'>Technologies:</span> ReactJS, Next.js, Tailwind CSS, React Native, Sass, MySQL
+                                <span className='text-base font-semibold text-gray-800 dark:text-gray-200'>Technologies:</span> React, Next.js, Tailwind CSS, React Native, Sass, MySQL
                             </li>
                             <li>
                                 <span className='text-base font-semibold text-gray-800 dark:text-gray-200'>Programming Languages:</span> TypeScript, HTML / CSS / JavaScript, SQL, Python, Java, PHP, Golang
