@@ -21,6 +21,7 @@ function Footer(): JSX.Element {
 						alt='jeremiah@jeremiahhowden.com'
 						layout='fill'
 						className='dark:invert'
+						quality={100}
 					/>
 				</div>
 			</a>
