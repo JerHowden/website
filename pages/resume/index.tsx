@@ -9,7 +9,15 @@ function Resume(): JSX.Element {
 
             <Head>
 				<title>{'Jeremiah\'s Resume'}</title>
-				<meta name='description' content={'Jeremiah Howden\'s résumé'}/>
+				<meta name='description' content={'Jeremiah Howden\'s Resume'}/>
+                <meta property='og:type' content='website' />
+				<meta property='og:title' content={'Jeremiah\'s Resume'} />
+				<meta property='og:description' content={'Jeremiah Howden\'s resume and portfolio site.'} />
+				<meta property='og:site_name' content='Jeremiah Howden' />
+				<meta property='twitter:card' content='summary' />
+				<meta property='twitter:creator' content='@jeremiah_howden' />
+				<meta property='twitter:title' content={'Jeremiah\'s Resume'} />
+				<meta property='twitter:description' content={'Jeremiah Howden\'s resume and portfolio site.'} />
 				<link rel='icon' href='/jhdot.svg'/>
 				{/* <link rel='apple-touch-icon' href='/jhdot.svg'/> // add this when safari accepts svg icons */}
 				<link rel='apple-touch-icon' href='/jhdot-white.png' media='(prefers-color-scheme:no-preference)'/>

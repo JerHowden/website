@@ -14,6 +14,14 @@ export default function Home() {
 			<Head>
 				<title>{'Jeremiah Howden'}</title>
 				<meta name='description' content='This is my website, built with next.js, typescript, and tailwind, deployed with vercel. Take a look around!'/>
+				<meta property='og:type' content='website' />
+				<meta property='og:title' content='Jeremiah Howden' />
+				<meta property='og:description' content={'Jeremiah Howden\'s portfolio site.'} />
+				<meta property='og:site_name' content='Jeremiah Howden' />
+				<meta property='twitter:card' content='summary' />
+				<meta property='twitter:creator' content='@jeremiah_howden' />
+				<meta property='twitter:title' content='Jeremiah Howden' />
+				<meta property='twitter:description' content={'Jeremiah Howden\'s portfolio site.'} />
 				<link rel='icon' href='/jhdot.svg'/>
 				{/* <link rel='apple-touch-icon' href='/jhdot.svg'/> // add this when safari accepts svg icons */}
 				<link rel='apple-touch-icon' href='/jhdot-white.png' media='(prefers-color-scheme:no-preference)'/>
