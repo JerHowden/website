@@ -21,7 +21,7 @@ function ProjectEmbed({ title, url, tagIDs, desc, githubURL}: types): JSX.Elemen
 			case 'bootstrap':	return <FontAwesomeIcon icon={['fab', 'bootstrap']} width={size*1.25} height={size} title='Bootstrap' />
 			case 'figma': 		return <Image src='/icons/figma.svg' width={size*0.7} height={size} alt='FG' title='Figma' className='filter grayscale brightness-50 dark:brightness-150' />
 			case 'github': 		return <a className='w-full text-gray-800 dark:text-gray-200' href={githubURL} title='GitHub ↗'><FontAwesomeIcon icon={['fab', 'github']} width={size} height={size} /></a>
-			case 'golang': 		return <Image src='/icons/golang.png' width={size*0.9} height={size} alt='GO' title='Golang' className='filter grayscale brightness-75 dark:brightness-110' />
+			case 'golang': 		return <Image src='/icons/golang.png' width={3*size/4} height={size} alt='GO' title='Golang' className='filter grayscale brightness-75 dark:brightness-110' />
 			case 'googlecloud': return <Image src='/icons/google-cloud.svg' width={size*1.3} height={size} alt='GC' title='Google Cloud' className=' filter grayscale brightness-50 dark:brightness-150' />
 			case 'js': 			return <FontAwesomeIcon icon={['fab', 'js']} width={size} height={size} title='JavaScript' />
 			case 'mapbox': 		return <Image src='/icons/mapbox.svg' width={size} height={size} alt='MB' title='Mapbox' className='filter dark:invert' />

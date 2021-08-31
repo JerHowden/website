@@ -10,6 +10,7 @@ function Todo(): JSX.Element {
                 <li>Update Resume for resume.pdf</li>
                 <li>Write blog post about Spotify api</li>
                 <li>Blog wrapper on /blog</li>
+                <li>Guestbook</li>
             </ul>
         </div>
     )
