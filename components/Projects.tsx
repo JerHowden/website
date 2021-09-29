@@ -26,9 +26,9 @@ function Projects(): JSX.Element {
                     />
                     <ProjectEmbed
                         title='TackleBox'
-                        url='https://jeremiahhowden.com#unfortunately-thats-proprietary'
+                        url='https://jeremiahhowden.com/tacklebox.pdf'
                         tagIDs={['github', 'react', 'js', 'baseweb']}
-                        githubURL='https://github.com/bredmond5/dns-twist-react'
+                        githubURL='https://capstone.cs.ucsb.edu/past21.html#team8'
                         desc='Novacoast — 2020-2021'
                     />
                     <ProjectEmbed
