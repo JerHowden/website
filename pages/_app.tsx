@@ -3,8 +3,8 @@ import type { AppProps } from 'next/app'
 import { config, library } from '@fortawesome/fontawesome-svg-core'
 config.autoAddCss = false
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faBars, faAddressCard, faBlog, faHome, faProjectDiagram, faFileAlt, faDatabase } from '@fortawesome/free-solid-svg-icons'
-library.add(fab, faBars, faAddressCard, faBlog, faHome, faProjectDiagram, faFileAlt, faDatabase)
+import { faBars, faAddressCard, faBlog, faHome, faProjectDiagram, faFileAlt, faDatabase, faChevronUp, faChevronDown, faLink, faArchive } from '@fortawesome/free-solid-svg-icons'
+library.add(fab, faBars, faAddressCard, faBlog, faHome, faProjectDiagram, faFileAlt, faDatabase, faChevronUp, faChevronDown, faLink, faArchive)
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
