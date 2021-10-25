@@ -12,7 +12,7 @@ function Todo(): JSX.Element {
                 <li>Blog wrapper on /blog</li>
                 <li>Guestbook</li>
                 <li className='line-through'>Sitemap</li>
-                <li>Update project embeds</li>
+                <li className='line-through'>Update project embeds</li>
             </ul>
         </div>
     )
