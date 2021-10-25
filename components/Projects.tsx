@@ -12,50 +12,61 @@ function Projects(): JSX.Element {
                 <div className='grid w-full grid-cols-1 gap-4'>
                     <ProjectEmbed
                         title='jeremiahhowden.com'
-                        url='https://github.com/JerHowden/website'
                         tagIDs={['GitHub', 'React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Spotify API', 'Vercel']}
-                        githubURL='https://github.com/JerHowden/website'
+                        repoURL='https://github.com/JerHowden/website'
                         year='Personal — 2021'
-                        desc=''
+                        desc='Right here, this is my personal site. 
+                        You&apos;ll find a blend of my personal and professional lives here with my blog, portfolio, and collection of links.
+                        Constantly evolving to include new ideas and designs.'
                     />
                     <ProjectEmbed
                         title='AD Discovery & Remediation'
-                        url='https://github.com/JerHowden/active-directory'
                         tagIDs={['GitHub', 'PowerShell']}
-                        githubURL='https://github.com/JerHowden/active-directory'
+                        repoURL='https://github.com/JerHowden/active-directory'
                         year='Novacoast — 2021'
-                        desc=''
+                        desc='Novacoast project for a client categorizing users and groups in Active Directory into active, questionable, and inactive. 
+                        Heavy usage of PowerShell and Excel.'
                     />
                     <ProjectEmbed
                         title='TackleBox'
-                        url='https://jeremiahhowden.com/tacklebox.pdf'
-                        tagIDs={['GitHub', 'React', 'JavaScript', 'Baseweb']}
-                        githubURL='https://capstone.cs.ucsb.edu/past21.html#team8'
+                        url='/tacklebox.pdf'
+                        tagIDs={['Repository', 'React', 'JavaScript', 'Baseweb']}
+                        repoURL='https://capstone.cs.ucsb.edu/past21.html#team8'
                         year='Novacoast — 2020-2021'
-                        desc=''
+                        desc={<p>
+                            Novacoast application transitioned into a UCSB capstone project.
+                            Provides a user interface and cron job for discovering phishing sites for clients and analyzing the threat level.
+                            Led the front-end team and built with <a className='p-0 link' href='https://github.com/ChristopherGarsia'>Chris</a> and <a className='p-0 link' href='https://github.com/eric-guerrero'>Eric</a>.
+                        </p>}
                     />
                     <ProjectEmbed
                         title='Athena'
-                        url='https://github.com/Athena-Capstone-2020/athena-mobile-app'
                         tagIDs={['GitHub', 'React Native', 'JavaScript', 'Google Cloud', 'Figma']}
-                        githubURL='https://github.com/Athena-Capstone-2020/athena-mobile-app'
+                        repoURL='https://github.com/Athena-Capstone-2020/athena-mobile-app'
                         year='University — 2020'
-                        desc=''
+                        desc={<p>
+                            Capstone Project to track food expiration and meal planning. 
+                            Created with the purpose of minimizing food waste and creating recipes from a user&apos;s pantry as a remedy. 
+                            Built with 
+                                {' '}<a className='p-0 link' href='https://github.com/Eliascm17'>Elias</a>,{' '}
+                                <a className='p-0 link' href='https://github.com/BlaineSieck'>Blaine</a>,{' '}
+                                <a className='p-0 link' href='https://github.com/rgoonie'>Rajeev</a>,{' '}
+                                and <a className='p-0 link' href='https://github.com/ynigoreyes'>Miggy</a>.
+                        </p>}
                     />
                     <ProjectEmbed
                         title='TTU Freshman Guide'
                         url='https://jerhowden.github.io/TexasTechFreshmanGuide/'
                         tagIDs={['GitHub', 'React', 'JavaScript', 'Mapbox']}
-                        githubURL='https://github.com/JerHowden/TexasTechFreshmanGuide'
+                        repoURL='https://github.com/JerHowden/TexasTechFreshmanGuide'
                         year='University — 2019'
-                        desc='This website was the final project for a Human-Computer Interaction class. It features an interactive map with clickable buildings and searchable locations by name, code, and tags.'
+                        desc={<p>This website was the final project for a Human-Computer Interaction class. It features an interactive map with clickable buildings and searchable locations by name, code, and tags. Built with <a href='https://twitter.com/Eliascm17' className='p-0 link'>Elias</a>.</p>}
                     />
                     <ProjectEmbed
                         title='Invoice v2'
-                        url='https://jeremiahhowden.com#unfortunately-thats-proprietary'
                         tagIDs={['React', 'JavaScript', 'Bootstrap', 'Golang', 'MySQL']}
                         year='Novacoast — 2018-2020'
-                        desc=''
+                        desc='A comprehensive billing application meant for connecting different business units. The project featured billing time management, accounting approval, and managerial oversight. I learned React on this and rebuilt the site twice as I learned more efficient methods.'
                     />
                 </div>
             </div>
