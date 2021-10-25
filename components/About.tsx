@@ -18,7 +18,7 @@ function About(): JSX.Element {
                     using {helperLink('https://www.typescriptlang.org/', 'TypeScript')}, {helperLink('https://nextjs.org/', 'Next.js')}, and {helperLink('https://tailwindcss.com/', 'Tailwind CSS')} to build my projects.
                 </p>
                 <p className='paragraph'>
-                    I currently work at {helperLink('https://www.novacoast.com/', 'Novacoast')} as a Software Developer, 
+                    I was a Software Developer at {helperLink('https://www.novacoast.com/', 'Novacoast')} for over three years, 
                     and I received my bachelor&apos;s degree in Computer Science from {helperLink('https://www.ttu.edu/', 'Texas Tech University')} last year.
                 </p>
             </div>
