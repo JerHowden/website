@@ -13,13 +13,12 @@ function About(): JSX.Element {
                     Hey, I&apos;m Jeremiah
                 </h1>
                 <p className='paragraph'>
-                    I make responsive sites with {helperLink('https://reactjs.org/', 'React')}. 
-                    I&apos;ve been developing in React for over three years and am currently
-                    using {helperLink('https://www.typescriptlang.org/', 'TypeScript')}, {helperLink('https://nextjs.org/', 'Next.js')}, and {helperLink('https://tailwindcss.com/', 'Tailwind CSS')} to build my projects.
+                    I am a React Developer at {helperLink('https://www.eogresources.com/', 'EOG Resources')} 
+                    and I received my bachelor&apos;s degree in Computer Science from {helperLink('https://www.ttu.edu/', 'Texas Tech University')} in 2020.
                 </p>
                 <p className='paragraph'>
-                    I was a Software Developer at {helperLink('https://www.novacoast.com/', 'Novacoast')} for over three years, 
-                    and I received my bachelor&apos;s degree in Computer Science from {helperLink('https://www.ttu.edu/', 'Texas Tech University')} last year.
+                    I&apos;ve been developing in React for over three years and like
+                    using {helperLink('https://www.typescriptlang.org/', 'TypeScript')}, {helperLink('https://nextjs.org/', 'Next.js')}, and {helperLink('https://tailwindcss.com/', 'Tailwind CSS')} to build my projects.
                 </p>
             </div>
         </div>
