@@ -13,8 +13,7 @@ function About(): JSX.Element {
                     Hey, I&apos;m Jeremiah
                 </h1>
                 <p className='paragraph'>
-                    I am a React Developer at {helperLink('https://www.eogresources.com/', 'EOG Resources')} 
-                    and I received my bachelor&apos;s degree in Computer Science from {helperLink('https://www.ttu.edu/', 'Texas Tech University')} in 2020.
+                    I am a React Developer at {helperLink('https://www.eogresources.com/', 'EOG Resources')} and I received my bachelor&apos;s degree in Computer Science from {helperLink('https://www.ttu.edu/', 'Texas Tech University')} in 2020.
                 </p>
                 <p className='paragraph'>
                     I&apos;ve been developing in React for over three years and like
