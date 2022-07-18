@@ -44,6 +44,9 @@ function ProjectEmbed({ title, url, tagIDs, year, desc, repoURL}: types): JSX.El
 			case 'Mapbox': 		icon = <Image src='/icons/mapbox.svg' width={size} height={size} alt='MB' title='Mapbox' className='filter dark:invert' />
 								href = 'https://www.mapbox.com/'
 								break
+			case 'Material UI': icon = <Image src='/icons/material-ui.svg' width={size} height={size} alt='MU' title='Material UI' className='filter dark:invert' />
+								href = 'https://nextjs.org/'
+								break
 			case 'MySQL': 		icon = <Image src='/icons/mysql.png' width={size} height={size*.66} alt='MySQL' title='MySQL' className='!h-auto !min-h-0 filter grayscale brightness-0 dark:brightness-150' />
 								href = 'https://www.mysql.com/'
 								break
@@ -58,6 +61,9 @@ function ProjectEmbed({ title, url, tagIDs, year, desc, repoURL}: types): JSX.El
 								break
 			case 'React Native': icon = <FontAwesomeIcon icon={['fab', 'react']} width={size} height={size} title='React Native' />
 								href = 'https://reactnative.dev/'
+								break
+			case 'Redux': 		icon = <Image src='/icons/redux.svg' width={size} height={size} alt='RX' title='Redux' className='filter dark:invert' />
+								href = 'https://nextjs.org/'
 								break
 			case 'Repository':  icon = <FontAwesomeIcon icon='archive' width={size} height={size} title='Repository' />
 								href = repoURL
