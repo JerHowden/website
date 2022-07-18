@@ -14,9 +14,8 @@ function Projects(): JSX.Element {
                         title='iPowerLift'
                         tagIDs={['React', 'TypeScript', 'Redux', 'Material UI']}
                         year='EOG Resources — 2021-Present'
-                        desc='Internal EOG application for field engineers to track oil wells. 
-                              Multitude of application requirements including data visualization, gas lift optimization, plunger tracking, setpoint changes, etc.
-                              Currently leading mobile development and user experience.'
+                        desc={<p>Internal EOG application for field engineers to track oil wells primarily focusing on <a className='p-0 link' href='https://recharts.org/'>data visualization</a>, <a className='p-0 link' href='https://en.wikipedia.org/wiki/Gas_lift'>gas lift optimization</a>, <a className='p-0 link' href='https://en.wikipedia.org/wiki/Plunger_lift'>plunger tracking</a>, control setpoints, etc.
+                              Currently leading mobile development and user experience.</p>}
                     />
                     <ProjectEmbed
                         title='jeremiahhowden.com'

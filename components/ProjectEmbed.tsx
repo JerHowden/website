@@ -45,7 +45,7 @@ function ProjectEmbed({ title, url, tagIDs, year, desc, repoURL}: types): JSX.El
 								href = 'https://www.mapbox.com/'
 								break
 			case 'Material UI': icon = <Image src='/icons/material-ui.svg' width={size} height={size} alt='MU' title='Material UI' className='filter dark:invert' />
-								href = 'https://nextjs.org/'
+								href = 'https://v4.mui.com/'
 								break
 			case 'MySQL': 		icon = <Image src='/icons/mysql.png' width={size} height={size*.66} alt='MySQL' title='MySQL' className='!h-auto !min-h-0 filter grayscale brightness-0 dark:brightness-150' />
 								href = 'https://www.mysql.com/'
@@ -63,7 +63,7 @@ function ProjectEmbed({ title, url, tagIDs, year, desc, repoURL}: types): JSX.El
 								href = 'https://reactnative.dev/'
 								break
 			case 'Redux': 		icon = <Image src='/icons/redux.svg' width={size} height={size} alt='RX' title='Redux' className='filter dark:invert' />
-								href = 'https://nextjs.org/'
+								href = 'https://redux.js.org/'
 								break
 			case 'Repository':  icon = <FontAwesomeIcon icon='archive' width={size} height={size} title='Repository' />
 								href = repoURL
@@ -111,12 +111,12 @@ function ProjectEmbed({ title, url, tagIDs, year, desc, repoURL}: types): JSX.El
 			{ open ?
 				<div className='w-full h-full p-4 transition-transform'>
 					<div className='flex flex-row gap-x-4'>
-						<div className='flex flex-col items-center w-3/4 text-left text-gray-700 dark:text-gray-300'>
+						<div className='flex flex-col items-center w-3/5 text-left text-gray-700 md:w-3/4 dark:text-gray-300'>
 							{desc}
 							{url && <a className='text-lg text-center w-36 link' style={{ width: '8.75rem' }} href={url}>Project Link ↗</a>}
 						</div>
 						<div className='h-auto border-l border-gray-200 dark:border-gray-800'/>
-						<aside className='flex flex-col w-1/4 gap-y-2'>
+						<aside className='flex flex-col w-2/5 md:w-1/4 gap-y-2'>
 							{tagIDs.map((tag, key) => Tag(tag, key))}
 						</aside>
 					</div>

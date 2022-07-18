@@ -39,7 +39,7 @@ function Resume(): JSX.Element {
                     <div>
                         <h2 className='text-xl font-bold text-black dark:text-white'>EXPERIENCE</h2>
                         <hr className='mb-2 border-black dark:border-white' />
-                        <div className='flex flex-col gap-y-3 md:gap-y-2'>
+                        <div className='flex flex-col gap-y-6 md:gap-y-4'>
                             <div className='flex flex-col gap-y-2 md:gap-y-1'>
                                 <div className='flex flex-col justify-between w-full text-gray-700 md:flex-row dark:text-gray-300'>
                                     <span>EOG Resources – Houston, TX / Remote</span>
