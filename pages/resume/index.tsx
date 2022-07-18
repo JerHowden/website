@@ -133,13 +133,13 @@ function Resume(): JSX.Element {
                         <hr className='mb-2 border-black dark:border-white' />
                         <ul className='flex flex-col text-sm text-gray-700 dark:text-gray-300 gap-y-2 md:gap-y-0.5'>
                             <li>
-                                <span className='text-base font-semibold text-gray-800 dark:text-gray-200'>Technologies:</span> React, Next.js, Tailwind CSS, React Native, Sass, MySQL
+                                <span className='text-base font-semibold text-gray-800 dark:text-gray-200'>Technologies:</span> React, Next.js, Redux, Tailwind CSS, Material UI, Sass, React Native, MySQL
                             </li>
                             <li>
                                 <span className='text-base font-semibold text-gray-800 dark:text-gray-200'>Programming Languages:</span> TypeScript, HTML / CSS / JavaScript, SQL, Python, Java, PHP, Golang
                             </li>
                             <li>
-                                <span className='text-base font-semibold text-gray-800 dark:text-gray-200'>DevOps:</span> Git, Docker, Agile Development
+                                <span className='text-base font-semibold text-gray-800 dark:text-gray-200'>DevOps:</span> GitHub, Git, Docker, Agile Development
                             </li>
                         </ul>
                     </div>
