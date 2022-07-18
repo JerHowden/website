@@ -11,13 +11,20 @@ function Projects(): JSX.Element {
                 </h1>
                 <div className='grid w-full grid-cols-1 gap-4'>
                     <ProjectEmbed
+                        title='iPowerLift'
+                        tagIDs={['React', 'TypeScript', 'Redux', 'Material UI']}
+                        year='EOG Resources — 2021-Present'
+                        desc={<p>Internal EOG application for field engineers to track oil wells primarily focusing on <a className='p-0 link' href='https://recharts.org/'>data visualization</a>, <a className='p-0 link' href='https://en.wikipedia.org/wiki/Gas_lift'>gas lift optimization</a>, <a className='p-0 link' href='https://en.wikipedia.org/wiki/Plunger_lift'>plunger tracking</a>, control setpoints, etc.
+                              Currently leading mobile development and user experience.</p>}
+                    />
+                    <ProjectEmbed
                         title='jeremiahhowden.com'
                         tagIDs={['GitHub', 'React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Spotify API', 'Vercel']}
                         repoURL='https://github.com/JerHowden/website'
                         year='Personal — 2021'
                         desc='Right here, this is my personal site. 
-                        You&apos;ll find a blend of my personal and professional lives here with my blog, portfolio, and collection of links.
-                        Constantly evolving to include new ideas and designs.'
+                              You&apos;ll find a blend of my personal and professional lives here with my blog, portfolio, and collection of links.
+                              Constantly evolving to include new ideas and designs.'
                     />
                     <ProjectEmbed
                         title='AD Discovery & Remediation'
@@ -25,7 +32,7 @@ function Projects(): JSX.Element {
                         repoURL='https://github.com/JerHowden/active-directory'
                         year='Novacoast — 2021'
                         desc='Novacoast project for a client categorizing users and groups in Active Directory into active, questionable, and inactive. 
-                        Heavy usage of PowerShell and Excel.'
+                              Heavy usage of PowerShell and Excel.'
                     />
                     <ProjectEmbed
                         title='TackleBox'

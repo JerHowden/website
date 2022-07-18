@@ -31,8 +31,6 @@ function Resume(): JSX.Element {
                     <div>
                         <h1 className='text-4xl font-bold text-black dark:text-white'>Jeremiah Howden</h1>
                         <div className='flex flex-col text-sm text-gray-600 md:flex-row gap-x-2 dark:text-gray-400'>
-                            <span className='line-through '>phonenumber</span> 
-                            <span className='hidden md:inline'>●</span>
                             <span>jeremiahhowden.com</span>
                             <span className='hidden md:inline'>●</span>
                             <span>jeremiah@jeremiahhowden.com</span>
@@ -41,40 +39,61 @@ function Resume(): JSX.Element {
                     <div>
                         <h2 className='text-xl font-bold text-black dark:text-white'>EXPERIENCE</h2>
                         <hr className='mb-2 border-black dark:border-white' />
-                        <div className='flex flex-col gap-y-2 md:gap-y-1'>
-                            <div className='flex flex-col justify-between w-full text-gray-700 md:flex-row dark:text-gray-300'>
-                                <span>Novacoast, Inc. – Santa Barbara, CA / Remote</span>
-                                <span className='text-sm md:text-base'>2017 - Present</span>
+                        <div className='flex flex-col gap-y-6 md:gap-y-4'>
+                            <div className='flex flex-col gap-y-2 md:gap-y-1'>
+                                <div className='flex flex-col justify-between w-full text-gray-700 md:flex-row dark:text-gray-300'>
+                                    <span>EOG Resources – Houston, TX / Remote</span>
+                                    <span className='text-sm md:text-base'>2021 - Present</span>
+                                </div>
+                                <div>
+                                    <div className='-mb-1 text-lg font-semibold'>React Developer</div>
+                                    <ul className='ml-4 text-sm text-gray-800 list-disc dark:text-gray-200'>
+                                        <li>Developing mobile and responsive applications for the operations optimization team.</li>
+                                        <li>Facilitate user requirements and business objectives with direct user contact and field experience.</li>
+                                    </ul>
+                                </div>
+                                <div className='ml-0 md:ml-4'>
+                                    <div className='-mb-1 text-lg font-semibold text-gray-800 underline dark:text-gray-200'>iPowerLift</div>
+                                    <ul className='ml-4 text-sm text-gray-700 list-disc dark:text-gray-300'>
+                                        <li>Internal application for field engineers to optimize and automate oil and gas production built with React, Redux, and Material UI.</li>
+                                        <li>Designed and created mobile application version of iPowerLift, onboarding 300+ users including 80+ new users.</li>
+                                        <li>Currently lead mobile development with emphasis on user experience, mobile design, and responsive design renovation.</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div>
-                                <div className='-mb-1 text-lg font-semibold'>Software Developer</div>
-                                <ul className='ml-4 text-sm text-gray-800 list-disc dark:text-gray-200'>
-                                    <li>Developed and led full-stack web applications for internal processes leveraging technologies including React, Golang, PHP, MySQL, and Docker.</li>
-                                    <li>Orchestrated and engaged in agile scrum development on multiple projects with team members.</li>
-                                    <li>Gathered comprehensive user requirements for understanding design and functionality implications.</li>
-                                    <li>Wrote unit tests and documentation for bug fixes and updates.</li>
-                                </ul>
-                            </div>
-                            <div className='ml-0 md:ml-4'>
-                                <div className='-mb-1 text-lg font-semibold text-gray-800 underline dark:text-gray-200'>Portfolio</div>
-                                <ul className='ml-4 text-sm text-gray-700 list-disc dark:text-gray-300'>
-                                    <li>Developed a fully deployed and Lighthouse 95+% portfolio site with Next.js, TypeScript, Tailwind CSS, and Vercel.</li>
-                                    <li>Connected to the community with a tutorial blog post walking through how to pull live Spotify data.</li>
-                                </ul>
-                            </div>
-                            <div className='ml-0 md:ml-4'>
-                                <div className='-mb-1 text-lg font-semibold text-gray-800 underline dark:text-gray-200'>TackleBox</div>
-                                <ul className='ml-4 text-sm text-gray-700 list-disc dark:text-gray-300'>
-                                    <li>Internal application built on React and Flask that monitors client domains for phishing attacks.</li>
-                                    <li>Produced front-end MVP, mentored UCSB capstone team in React to continue with risk analysis.</li>
-                                </ul>
-                            </div>
-                            <div className='ml-0 md:ml-4'>
-                                <div className='-mb-1 text-lg font-semibold text-gray-800 underline dark:text-gray-200'>Invoice System</div>
-                                <ul className='ml-4 text-sm text-gray-700 list-disc dark:text-gray-300'>
-                                    <li>Enterprise-level application used by all Novacoast departments for tracking billing and invoicing clients leveraging React, Golang, and MySQL.</li>
-                                    <li>Lead developer responsible for all stages of development and deployment.</li>
-                                </ul>
+                            <div className='flex flex-col gap-y-2 md:gap-y-1'>
+                                <div className='flex flex-col justify-between w-full text-gray-700 md:flex-row dark:text-gray-300'>
+                                    <span>Novacoast, Inc. – Santa Barbara, CA / Remote</span>
+                                    <span className='text-sm md:text-base'>2017 - 2021</span>
+                                </div>
+                                <div>
+                                    <div className='-mb-1 text-lg font-semibold'>Software Developer</div>
+                                    <ul className='ml-4 text-sm text-gray-800 list-disc dark:text-gray-200'>
+                                        <li>Developed and led full-stack web applications for internal processes leveraging technologies including React, Golang, PHP, MySQL, and Docker.</li>
+                                        <li>Orchestrated and engaged in agile scrum development with team members on multiple projects.</li>
+                                        <li>Gathered comprehensive user requirements for understanding design and functionality implications.</li>
+                                    </ul>
+                                </div>
+                                <div className='ml-0 md:ml-4'>
+                                    <div className='-mb-1 text-lg font-semibold text-gray-800 underline dark:text-gray-200'>Portfolio</div>
+                                    <ul className='ml-4 text-sm text-gray-700 list-disc dark:text-gray-300'>
+                                        <li>Developed a fully deployed and Lighthouse 95+% portfolio site with Next.js, TypeScript, Tailwind CSS, and Vercel.</li>
+                                    </ul>
+                                </div>
+                                <div className='ml-0 md:ml-4'>
+                                    <div className='-mb-1 text-lg font-semibold text-gray-800 underline dark:text-gray-200'>TackleBox</div>
+                                    <ul className='ml-4 text-sm text-gray-700 list-disc dark:text-gray-300'>
+                                        <li>Internal application built on React and Flask that monitors client domains for phishing attacks.</li>
+                                        <li>Produced front-end MVP, mentored UCSB capstone team in React to continue with risk analysis.</li>
+                                    </ul>
+                                </div>
+                                <div className='ml-0 md:ml-4'>
+                                    <div className='-mb-1 text-lg font-semibold text-gray-800 underline dark:text-gray-200'>Invoice System</div>
+                                    <ul className='ml-4 text-sm text-gray-700 list-disc dark:text-gray-300'>
+                                        <li>Enterprise-level application used by all Novacoast departments for tracking billing and invoicing clients leveraging React, Golang, and MySQL.</li>
+                                        <li>Lead developer responsible for all stages of development and deployment.</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
