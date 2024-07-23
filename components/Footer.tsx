@@ -48,8 +48,8 @@ function Footer(): JSX.Element {
 				</div>
 				<div className='flex flex-col gap-y-0.5 text-left sm:text-right'>
 					<div className=''>
-						<Link href='/resume'>
-							<a title='résumé' className='p-0.5 lg:text-lg link'>resume</a>
+						<Link href='/resume' title='résumé' className='p-0.5 lg:text-lg link'>
+							resume
 						</Link>
 					</div>
 					<div className=''>

@@ -6,10 +6,8 @@ function Header(): JSX.Element {
     return(
         <div className='sticky top-0 z-20 flex self-start justify-around w-full bg-white dark:bg-black backdrop-filter backdrop-blur dark:bg-opacity-60 bg-opacity-60 backdrop-saturate-200'>
             <div className='flex flex-row justify-between w-full max-w-3xl p-4 bg-transparent'>
-                <Link href='/'>
-                    <a title='jeremiahhowden.com' className='h-full mt-1 text-xl font-semibold link'>
-                        jeremiahhowden
-                    </a>
+                <Link href='/' title='jeremiahhowden.com' className='h-full mt-1 text-xl font-semibold link'>
+                    jeremiahhowden
                 </Link>
                 <div className='flex flex-row justify-between invisible h-full p-1 text-xl w-96 md:visible'>
                     <div className='flex-1' title='dev blog ↗'>
