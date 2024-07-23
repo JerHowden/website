@@ -5,11 +5,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import useSWR from 'swr'
 
 import footerEmail from '../public/email-footer.svg'
-import fetcher from '../lib/fetcher'
+import { fetcher } from '../lib'
 
 function Footer(): JSX.Element {
 
 	const { data } = useSWR('/api/now-playing', fetcher)
+	console.log({ data })
 
 	return(
 		<footer className='flex flex-col w-full max-w-3xl p-4'>
