@@ -1,7 +1,9 @@
+import { CssBaseline, ThemeProvider } from '@mui/material'
 import { Metadata } from 'next'
 import { ReactNode } from 'react'
-import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Header from '../components/Header'
+import { theme } from './theme'
 
 export const metadata: Metadata = {
   title: 'Jeremiah Howden',
@@ -46,27 +48,21 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <head>
-        <link
-          rel="preconnect"
-          href="https://fonts.googleapis.com"
-        />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
+      {/* <head>
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         />
-      </head>
+      </head> */}
       <body>
-        <div className="flex flex-col items-center justify-between min-h-screen">
-          <Header />
-          {children}
-          <Footer />
-        </div>
+        <CssBaseline enableColorScheme />
+        <ThemeProvider theme={theme}>
+          <div className="flex flex-col items-center justify-between min-h-screen">
+            <Header />
+            {children}
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   )
