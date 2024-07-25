@@ -1,9 +1,9 @@
-import { CssBaseline, ThemeProvider } from '@mui/material'
+import { CssBaseline } from '@mui/material'
 import { Metadata } from 'next'
 import { ReactNode } from 'react'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
-import { theme } from './theme'
+import { Theme } from './_theme'
 
 export const metadata: Metadata = {
   title: 'Jeremiah Howden',
@@ -56,13 +56,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </head> */}
       <body>
         <CssBaseline enableColorScheme />
-        <ThemeProvider theme={theme}>
+        <Theme>
           <div className="flex flex-col items-center justify-between min-h-screen">
             <Header />
             {children}
             <Footer />
           </div>
-        </ThemeProvider>
+        </Theme>
       </body>
     </html>
   )
