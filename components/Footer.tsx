@@ -1,16 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSpotify } from '@fortawesome/free-brands-svg-icons'
-import useSWR from 'swr'
 
-import { fetcher } from '../lib'
+import { Spotify } from './Spotify'
 
-function Footer(): JSX.Element {
-  const { data } = useSWR('/api/now-playing', fetcher)
-  console.log({ data })
-
+export default function Footer() {
   return (
     <footer className="flex flex-col w-full max-w-3xl p-4">
       {/* TODO : Modal popout for contact */}
@@ -40,55 +34,7 @@ function Footer(): JSX.Element {
               Software Developer
             </div>
           </div>
-          <div
-            className="flex flex-row items-center text-gray-400 gap-x-2 group"
-            title={
-              data?.isPlaying
-                ? data?.songUrl
-                  ? "link to what i'm listening to"
-                  : "what i'm listening to"
-                : 'spotify inactive'
-            }
-          >
-            <FontAwesomeIcon
-              icon={faSpotify}
-              className={`w-7 h-7 ${
-                data?.isPlaying
-                  ? 'text-green-600 dark:text-green-500  animate-pulse md:h-9 md:w-9'
-                  : 'group-hover:animate-none'
-              } ${data?.songUrl ? 'group-hover:text-black dark:group-hover:text-white' : ''}`}
-            />
-            {data?.isPlaying ? (
-              <a
-                className={`flex flex-col gap-x-2 ${data?.songUrl ? '' : ' pointer-events-none'}`}
-                href={data?.songUrl || ''}
-              >
-                <div
-                  className={`text-sm font-medium text-green-700 dark:text-green-400 md:text-base ${
-                    data?.songUrl ? 'dark:group-hover:text-white group-hover:text-black' : ''
-                  }`}
-                >
-                  {data?.title || ''}
-                </div>
-                <div
-                  className={`text-xs text-green-600 dark:font-light dark:text-green-500 ${
-                    data?.songUrl ? 'group-hover:text-black dark:group-hover:text-white' : ''
-                  }`}
-                >
-                  {data?.artist || ''}
-                </div>
-              </a>
-            ) : (
-              <div>Not Playing</div>
-            )}
-            <span
-              className={`hidden text-xl text-black ${
-                data?.isPlaying && data?.songUrl ? 'group-hover:inline' : ''
-              } dark:text-white`}
-            >
-              ↗
-            </span>
-          </div>
+          <Spotify />
           <div className="flex text-gray-600 dark:text-gray-400">
             © {new Date().getFullYear()} Jeremiah Howden
           </div>
@@ -144,5 +90,3 @@ function Footer(): JSX.Element {
     </footer>
   )
 }
-
-export default Footer

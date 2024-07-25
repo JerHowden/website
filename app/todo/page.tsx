@@ -1,6 +1,11 @@
-import React from 'react'
+import { Metadata } from 'next'
 
-function Todo(): JSX.Element {
+export const metadata: Metadata = {
+  title: '// TODO',
+  description: 'do not index this lol',
+}
+
+function Todo() {
   return (
     <div className="flex flex-col p-8 border gap-y-8">
       <h1 className="text-4xl italic font-extrabold">{'// TODO:'}</h1>
