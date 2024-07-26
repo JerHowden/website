@@ -15,4 +15,4 @@ export const lightMode: ThemeOptions = {
       paper: '#f7edde',
     },
   },
-}
+} as const

@@ -15,4 +15,4 @@ export const darkMode: ThemeOptions = {
       paper: '#40544d',
     },
   },
-}
+} as const

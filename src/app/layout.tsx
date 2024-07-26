@@ -1,8 +1,8 @@
 import { Footer, Header } from '@/components'
-import { Container, CssBaseline } from '@mui/material'
+import { Box, CssBaseline, Stack, ThemeProvider } from '@mui/material'
 import { Metadata } from 'next'
 import { ReactNode } from 'react'
-import { Theme } from './_theme'
+import { darkTheme, darkMode } from './_theme'
 
 export const metadata: Metadata = {
   title: 'Jeremiah Howden',
@@ -48,23 +48,23 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
       lang="en"
-      style={{ backgroundColor: 'red' }}
+      style={{ backgroundColor: darkMode.palette?.background?.default }}
     >
-      {/* <head>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        />
-      </head> */}
-      <body>
+      <body style={{ backgroundColor: darkMode.palette?.background?.default }}>
         <CssBaseline enableColorScheme />
-        <Theme>
-          <Container>
+        <ThemeProvider theme={darkTheme}>
+          <Stack
+            direction="column"
+            display="flex"
+            minHeight="100vh"
+            alignItems="center"
+            justifyContent="space-between"
+          >
             <Header />
             {children}
             <Footer />
-          </Container>
-        </Theme>
+          </Stack>
+        </ThemeProvider>
       </body>
     </html>
   )
