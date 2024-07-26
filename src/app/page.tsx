@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
-import Projects from '@/components/Projects'
-import About from '@/components/About'
+import Projects from '@/components/_legacy/Projects'
+import About from '@/components/_legacy/About'
+import { Container } from '@mui/material'
 
 export const metadata: Metadata = {
   title: 'Jeremiah Howden',
@@ -9,14 +10,5 @@ export const metadata: Metadata = {
 }
 
 export default function Home() {
-  return (
-    <div className="flex flex-col bg">
-      <main className="">
-        <div className="flex flex-col items-center gap-y-4">
-          <About />
-          <Projects />
-        </div>
-      </main>
-    </div>
-  )
+  return <Container></Container>
 }

@@ -1,8 +1,7 @@
-import { CssBaseline } from '@mui/material'
+import { Footer, Header } from '@/components'
+import { Container, CssBaseline } from '@mui/material'
 import { Metadata } from 'next'
 import { ReactNode } from 'react'
-import Footer from '../components/Footer'
-import Header from '../components/Header'
 import { Theme } from './_theme'
 
 export const metadata: Metadata = {
@@ -47,7 +46,10 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      style={{ backgroundColor: 'red' }}
+    >
       {/* <head>
         <link
           rel="stylesheet"
@@ -57,11 +59,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body>
         <CssBaseline enableColorScheme />
         <Theme>
-          <div className="flex flex-col items-center justify-between min-h-screen">
+          <Container>
             <Header />
             {children}
             <Footer />
-          </div>
+          </Container>
         </Theme>
       </body>
     </html>

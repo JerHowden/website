@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
-import { Spotify } from './Spotify'
+import { Spotify } from '../Spotify'
 
 export default function Footer() {
   return (
