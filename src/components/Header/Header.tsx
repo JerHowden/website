@@ -17,10 +17,8 @@ export function Header() {
       >
         <Link
           href="/"
-          title="jeremiahhowden.com"
           TypographyProps={{
             variant: 'title3Emphasis',
-            color: 'white',
           }}
         >
           jeremiahhowden
@@ -28,8 +26,29 @@ export function Header() {
         <Stack
           direction="row"
           flexWrap="nowrap"
+          alignItems="center"
         >
-          <LogoLink startIcon={<FontAwesomeIcon icon={faSpotify} />}>Spotify</LogoLink>
+          <LogoLink
+            startIcon={<FontAwesomeIcon icon={faSpotify} />}
+            size="small"
+          >
+            Spotify
+          </LogoLink>
+          <LogoLink
+            startIcon={<FontAwesomeIcon icon={faSpotify} />}
+            size="medium"
+          >
+            Spotify
+          </LogoLink>
+          <LogoLink
+            startIcon={<FontAwesomeIcon icon={faSpotify} />}
+            size="large"
+          >
+            Spotify
+          </LogoLink>
+          <LogoLink size="small">Spotify</LogoLink>
+          <LogoLink size="medium">Spotify</LogoLink>
+          <LogoLink size="large">Spotify</LogoLink>
         </Stack>
       </Stack>
     </Container>

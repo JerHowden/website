@@ -105,7 +105,7 @@ const scales = [
   SCALE_FACTOR ** 2,
   SCALE_FACTOR ** 3,
   SCALE_FACTOR ** 4,
-] as const
+].map((scale) => `${scale}em`)
 
 /**
  * Custom theme for jeremiahhowden.com
@@ -113,8 +113,9 @@ const scales = [
  * @see https://www.chainlift.io/liftkit#type
  */
 export const baseTheme: ThemeOptions = {
-  spacing: scales.map((scale) => `${scale}em`),
+  spacing: scales,
   typography: {
+    fontFamily: montserrat.style.fontFamily,
     display1: {
       fontSize: '4.235em',
       fontWeight: 400,
@@ -241,6 +242,13 @@ export const baseTheme: ThemeOptions = {
       letterSpacing: '-0.009em',
       fontFamily: montserrat.style.fontFamily,
     },
+    button: {
+      fontSize: '0.943em',
+      fontWeight: 600,
+      lineHeight: 1.272,
+      letterSpacing: '-0.009em',
+      fontFamily: montserrat.style.fontFamily,
+    },
     label: {
       fontSize: '0.835em',
       fontWeight: 500,
@@ -293,5 +301,40 @@ export const baseTheme: ThemeOptions = {
     h6: undefined,
     subtitle1: undefined,
     subtitle2: undefined,
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          flexDirection: 'row',
+          alignItems: 'center',
+          lineHeight: 1,
+        },
+        sizeLarge: {
+          fontSize: '1em',
+        },
+        sizeMedium: {
+          fontSize: '0.943em',
+        },
+        sizeSmall: {
+          fontSize: '0.835em',
+        },
+        iconSizeLarge: {
+          width: '1.272em',
+          marginRight: 6,
+          marginLeft: -4,
+        },
+        iconSizeMedium: {
+          width: '1.129em',
+          marginRight: 5,
+          marginLeft: -2,
+        },
+        iconSizeSmall: {
+          width: '1em',
+          marginRight: 4,
+          marginLeft: -0.5,
+        },
+      },
+    },
   },
 } as const

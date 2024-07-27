@@ -1,4 +1,6 @@
-import { Button, ButtonProps } from '@mui/material'
+'use client'
+
+import { Button, ButtonProps, Typography, useTheme } from '@mui/material'
 import { ReactNode } from 'react'
 
 type LogoLinkProps = ButtonProps & {
@@ -6,9 +8,14 @@ type LogoLinkProps = ButtonProps & {
 }
 
 export function LogoLink({ children, ...props }: LogoLinkProps) {
+  const theme = useTheme()
+
   return (
     <Button
       variant="text"
+      size="medium"
+      color="primary"
+      sx={{}}
       {...props}
     >
       {children}

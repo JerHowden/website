@@ -10,5 +10,5 @@ export const metadata: Metadata = {
 }
 
 export default function Home() {
-  return <Container></Container>
+  return <Container>Yo</Container>
 }
