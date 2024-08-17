@@ -22,6 +22,8 @@ export function Link({ children, external, TypographyProps, ...props }: LinkProp
       <Typography
         sx={{
           display: 'inline-block',
+          transitionProperty: 'all',
+          transitionDuration: '0.3s',
           '&::after': {
             display: 'block',
             transform: 'scaleX(0)',
@@ -32,10 +34,12 @@ export function Link({ children, external, TypographyProps, ...props }: LinkProp
             transitionProperty: 'all',
             transitionDuration: '0.3s',
           },
-          '&:hover::after': {
-            transform: 'scaleX(1)',
+          '&:hover': {
+            color: 'text.primary',
+            '&::after': { transform: 'scaleX(1)' },
           },
         }}
+        color="text.primary"
         {...TypographyProps}
       >
         {children}
