@@ -28,12 +28,15 @@ type Resume = {
     email: string
     website: string
   }
+  objective: string
   experience: Section[]
   education: Section[]
   skills: Skill[]
 }
 
 export const resume: Resume = {
+  objective:
+    'I am a front-end React developer specializing in intuitive and accessible user interfaces to enhance user experience and streamline workflows. Leveraging my years of experience and ability to empathize with users, I am seeking an opportunity to resolve stakeholder challenges and elevate projects to a higher standard.',
   personal: {
     name: 'Jeremiah Howden',
     email: 'jeremiahhowden@gmail.com',
@@ -48,17 +51,18 @@ export const resume: Resume = {
       roles: [
         {
           title: 'React Developer',
-          details: ["UX champion and designers' favorite developer."],
+          details: [
+            'Coordinated with stakeholders on project value and workflow remotely and in the field, and presented updates to leadership and development team in an agile environment.',
+            'Built reusable React components with responsive design principles, TSDoc documentation, and utilized across multiple sprint teams to facilitate cohesive user interface and experience.',
+            'Designed and created mobile application version of iPowerlift including navigation, forms, and dashboards, onboarding 200+ existing users and 80+ new users.',
+          ],
           projects: [
             {
               title: 'iPowerlift',
               details: [
                 'Internal application for field engineers to optimize and automate oil and gas production built with React, Redux, and MUI.',
+                'Redesigned and implemented the user interface of a plunger optimization application, enhancing user experience and data transparency, resulting in a 100% increase in optimizer adoption rate and improved stakeholder relations.',
               ],
-            },
-            {
-              title: 'iPowerlift Mobile',
-              details: [],
             },
           ],
         },
@@ -79,17 +83,17 @@ export const resume: Resume = {
           ],
           projects: [
             {
-              title: 'TackleBox',
-              details: [
-                'Internal application built on React and Flask that monitors client domains for phishing attacks.',
-                'Produced front-end MVP, mentored UCSB capstone team in React to continue with risk analysis.',
-              ],
-            },
-            {
               title: 'Invoice System',
               details: [
                 'Enterprise-level application used by all Novacoast departments for tracking billing and invoicing clients leveraging React, Golang, and MySQL.',
                 'Lead developer responsible for all stages of development and deployment.',
+              ],
+            },
+            {
+              title: 'TackleBox',
+              details: [
+                'Internal application built on React and Flask that monitors client domains for phishing attacks.',
+                'Produced front-end MVP, mentored UCSB capstone team in React to continue with risk analysis.',
               ],
             },
           ],
