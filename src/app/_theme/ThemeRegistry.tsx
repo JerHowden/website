@@ -29,7 +29,7 @@ export function ThemeRegistry({ children }: { children: ReactNode }) {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
   console.log({ prefersDarkMode })
 
-  const modedTheme = !prefersDarkMode ? darkTheme : lightTheme
+  const modedTheme = prefersDarkMode ? darkTheme : lightTheme
 
   return (
     <AppRouterCacheProvider>

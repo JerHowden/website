@@ -4,27 +4,28 @@ export const darkMode: ThemeOptions = {
   palette: {
     mode: 'dark',
     primary: {
-      main: '#db991f',
+      main: '#DB991F',
       contrastText: 'rgba(255,255,255,0.9)',
     },
     secondary: {
-      main: '#E05252',
+      main: '#3868C2',
     },
     background: {
-      default: '#102323',
-      paper: '#40544d',
+      default: '#2C3A35',
+      paper: '#536555',
     },
     text: {
       primary: 'rgba(255, 255, 255, 0.9)',
-      secondary: 'rgba(255, 255, 255, 0.6)',
-      disabled: 'rgba(255, 255, 255, 0.3)',
+      secondary: 'rgba(255, 255, 255, 0.7)',
+      disabled: 'rgba(255, 255, 255, 0.35)',
     },
+    divider: 'rgba(255, 255, 255, 0.35)',
   },
   components: {
     MuiCssBaseline: {
       styleOverrides: {
         html: {
-          backgroundColor: '#102323',
+          backgroundColor: '#2C3A35',
         },
         body: {
           width: '100%',

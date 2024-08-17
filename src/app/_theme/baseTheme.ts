@@ -320,17 +320,17 @@ export const baseTheme: ThemeOptions = {
           fontSize: '0.835em',
         },
         iconSizeLarge: {
-          width: '1.272em',
+          // width: '1.272em',
           marginRight: 6,
           marginLeft: -4,
         },
         iconSizeMedium: {
-          width: '1.129em',
+          // width: '1.129em',
           marginRight: 5,
           marginLeft: -2,
         },
         iconSizeSmall: {
-          width: '1em',
+          // width: '1em',
           marginRight: 4,
           marginLeft: -0.5,
         },

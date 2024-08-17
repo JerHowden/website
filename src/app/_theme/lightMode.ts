@@ -4,27 +4,28 @@ export const lightMode: ThemeOptions = {
   palette: {
     mode: 'light',
     primary: {
-      main: '#2368a9',
-      contrastText: 'rgba(255,255,255,0.9)',
+      main: '#3868C2',
+      contrastText: 'rgba(0,0,0,0.9)',
     },
     secondary: {
-      main: '#677D6A',
+      main: '#DB991F',
     },
     background: {
-      default: '#F3E4CE',
-      paper: '#f7edde',
+      default: '#D1DCD8',
+      paper: '#A5B6A7',
     },
     text: {
       primary: 'rgba(0, 0, 0, 0.9)',
-      secondary: 'rgba(0, 0, 0, 0.6)',
-      disabled: 'rgba(0, 0, 0, 0.3)',
+      secondary: 'rgba(0, 0, 0, 0.7)',
+      disabled: 'rgba(0, 0, 0, 0.35)',
     },
+    divider: 'rgba(0, 0, 0, 0.7)',
   },
   components: {
     MuiCssBaseline: {
       styleOverrides: {
         html: {
-          backgroundColor: '#F3E4CE',
+          backgroundColor: '#D1DCD8',
         },
         body: {
           width: '100%',

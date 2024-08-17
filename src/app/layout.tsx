@@ -1,4 +1,5 @@
 import { Footer, Header } from '@/components'
+import '@fortawesome/fontawesome-svg-core/styles.css'
 import { Stack } from '@mui/material'
 import { Metadata } from 'next'
 import { ReactNode } from 'react'
