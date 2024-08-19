@@ -1,14 +1,234 @@
-import React from 'react'
-import Head from 'next/head'
-import Link from 'next/link'
+import { resume, Section as SectionType, Skill as SkillType } from '@/lib'
+import { Card, Container, Divider, Stack, Typography } from '@mui/material'
 import { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: "Jeremiah's Resume",
   description: "Jeremiah Howden's Resume",
 }
 
-function Resume() {
+type HeaderProps = {
+  title: string
+}
+
+function Header({ title }: HeaderProps) {
+  return (
+    <Stack
+      direction="column"
+      gap={1}
+    >
+      <Typography
+        variant="title3Emphasis"
+        textTransform="uppercase"
+      >
+        {title}
+      </Typography>
+      <Divider variant="fullWidth" />
+    </Stack>
+  )
+}
+
+type DetailListProps = {
+  details: string[]
+}
+
+function DetailList({ details }: DetailListProps) {
+  return (
+    <ul
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        paddingLeft: '1em',
+        margin: 0,
+      }}
+    >
+      {details.map((detail) => (
+        <Typography
+          key={detail}
+          variant="body2"
+          component="li"
+        >
+          {detail}
+        </Typography>
+      ))}
+    </ul>
+  )
+}
+
+function Section({ company, location, startDate, endDate, roles }: SectionType) {
+  return (
+    <Stack
+      direction="column"
+      gap={1}
+    >
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+      >
+        <Typography
+          variant="body1"
+          color="text.secondary"
+        >
+          {company} — {location}
+        </Typography>
+        <Typography
+          variant="body1"
+          color="text.secondary"
+        >
+          {startDate} - {endDate}
+        </Typography>
+      </Stack>
+      {roles.map((role) => (
+        <Stack
+          key={role.title}
+          direction="column"
+          gap={3}
+        >
+          <Stack direction="column">
+            <Typography variant="headingEmphasis">{role.title}</Typography>
+            <DetailList details={role.details} />
+          </Stack>
+          {role.projects.map((project) => (
+            <Stack
+              key={project.title}
+              direction="column"
+              ml="1em"
+            >
+              <Typography
+                variant="headingEmphasis"
+                sx={{ textDecoration: 'underline' }}
+              >
+                {project.title}
+              </Typography>
+              <DetailList details={project.details} />
+            </Stack>
+          ))}
+        </Stack>
+      ))}
+    </Stack>
+  )
+}
+
+function SkillList({ domain, list }: SkillType) {
+  return (
+    <Stack
+      direction="row"
+      gap={2}
+    >
+      <Typography variant="body1Emphasis">{domain}:</Typography>
+      <Typography variant="body1">
+        {list.map((skill, index) => (index !== list.length - 1 ? `${skill}, ` : skill))}
+      </Typography>
+    </Stack>
+  )
+}
+
+export default function Resume() {
+  const test = true
+
+  if (test) {
+    return (
+      <Container maxWidth="md">
+        <Link
+          href="/resume.pdf"
+          // title="Resume File 🗎"
+          style={{ textDecoration: 'none' }}
+        >
+          <Card
+            sx={{
+              boxShadow: 3,
+              backgroundColor: 'background.default',
+              color: 'text.primary',
+              borderRadius: 0,
+              p: 5,
+              '&:hover': {
+                boxShadow: 5,
+              },
+            }}
+          >
+            <Stack
+              direction="column"
+              gap={4}
+            >
+              <Stack direction="column">
+                <Typography variant="display2Emphasis">{resume.personal.name}</Typography>
+                <Stack
+                  direction="row"
+                  gap={3}
+                >
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                  >
+                    {resume.personal.website}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                  >
+                    ●
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                  >
+                    {resume.personal.email}
+                  </Typography>
+                </Stack>
+              </Stack>
+              <Stack
+                direction="column"
+                gap={3}
+              >
+                <Header title="Objective" />
+                <Typography variant="body1">{resume.objective}</Typography>
+              </Stack>
+              <Stack
+                direction="column"
+                gap={3}
+              >
+                <Header title="Experience" />
+                {resume.experience.map((job) => (
+                  <Section
+                    key={job.company}
+                    {...job}
+                  />
+                ))}
+              </Stack>
+              <Stack
+                direction="column"
+                gap={3}
+              >
+                <Header title="Education" />
+                {resume.education.map((school) => (
+                  <Section
+                    key={school.company}
+                    {...school}
+                  />
+                ))}
+              </Stack>
+              <Stack
+                direction="column"
+                gap={3}
+              >
+                <Header title="Skills" />
+                <Stack
+                  direction="column"
+                  gap={1}
+                >
+                  {resume.skills.map((skills) => (
+                    <SkillList {...skills} />
+                  ))}
+                </Stack>
+              </Stack>
+            </Stack>
+          </Card>
+        </Link>
+      </Container>
+    )
+  }
+
   return (
     <div className="w-full h-full max-w-3xl p-4">
       <Link
@@ -212,5 +432,3 @@ function Resume() {
     </div>
   )
 }
-
-export default Resume

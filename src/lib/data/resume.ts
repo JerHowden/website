@@ -9,7 +9,7 @@ type Role = {
   projects: Project[]
 }
 
-type Section = {
+export type Section = {
   company: string
   location: string
   startDate: string
@@ -17,7 +17,7 @@ type Section = {
   roles: Role[]
 }
 
-type Skill = {
+export type Skill = {
   domain: string
   list: string[]
 }
@@ -35,13 +35,13 @@ type Resume = {
 }
 
 export const resume: Resume = {
-  objective:
-    'I am a front-end React developer specializing in intuitive and accessible user interfaces to enhance user experience and streamline workflows. Leveraging my years of experience and ability to empathize with users, I am seeking an opportunity to resolve stakeholder challenges and elevate projects to a higher standard.',
   personal: {
     name: 'Jeremiah Howden',
     email: 'jeremiahhowden@gmail.com',
     website: 'jeremiahhowden.com',
   },
+  objective:
+    'I am a front-end React developer specializing in intuitive and accessible user interfaces to enhance user experience and streamline workflows. Leveraging my years of experience and ability to empathize with users, I am seeking an opportunity to resolve stakeholder challenges and elevate projects to a higher standard.',
   experience: [
     {
       company: 'EOG Resources',
@@ -134,5 +134,27 @@ export const resume: Resume = {
       ],
     },
   ],
-  skills: [],
+  skills: [
+    {
+      domain: 'Technologies',
+      list: [
+        'React',
+        'Material UI',
+        'Redux',
+        'Next.js',
+        'Tailwind CSS',
+        'Sass',
+        'React Native',
+        'MySQL',
+      ],
+    },
+    {
+      domain: 'Programming Languages',
+      list: ['TypeScript', 'HTML / CSS / JavaScript', 'SQL', 'Python', 'PHP', 'Java'],
+    },
+    {
+      domain: 'DevOps',
+      list: ['GitHub', 'Git', 'Agile Development', 'Vercel Deployment', 'Docker'],
+    },
+  ],
 } as const
