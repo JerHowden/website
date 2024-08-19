@@ -8,10 +8,10 @@ export const darkMode: ThemeOptions = {
       contrastText: 'rgba(255,255,255,0.9)',
     },
     secondary: {
-      main: '#3868C2',
+      main: '#B87333',
     },
     background: {
-      default: '#2C3A35',
+      default: '#2C3A35FA',
       paper: '#536555',
     },
     text: {

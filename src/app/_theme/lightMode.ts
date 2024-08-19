@@ -4,14 +4,14 @@ export const lightMode: ThemeOptions = {
   palette: {
     mode: 'light',
     primary: {
-      main: '#3868C2',
+      main: '#DB991F',
       contrastText: 'rgba(0,0,0,0.9)',
     },
     secondary: {
-      main: '#DB991F',
+      main: '#B87333',
     },
     background: {
-      default: '#D1DCD8',
+      default: '#D1DCD8FA',
       paper: '#A5B6A7',
     },
     text: {

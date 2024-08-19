@@ -1,8 +1,10 @@
-import { Footer, Header } from '@/components'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+
+import { Footer, Header } from '@/components'
 import { Stack } from '@mui/material'
 import { Metadata } from 'next'
 import { ReactNode } from 'react'
+import topo from '../../public/backgrounds/topo-sample.jpg'
 import { ThemeRegistry } from './_theme'
 
 export const metadata: Metadata = {
@@ -48,7 +50,12 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <ThemeRegistry>
-      <html lang="en">
+      <html
+        lang="en"
+        style={{
+          background: `url(${topo.src})`,
+        }}
+      >
         <body>
           <Stack
             direction="column"
