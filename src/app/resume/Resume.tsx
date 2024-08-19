@@ -4,11 +4,11 @@ import { resume } from '@/lib'
 import { Card, Stack, Typography } from '@mui/material'
 import Link from 'next/link'
 import { Fade } from 'react-awesome-reveal'
-import Header from './Header'
-import Section from './Section'
-import SkillList from './SkillList'
+import { Header } from './Header'
+import { Section } from './Section'
+import { SkillList } from './SkillList'
 
-export default function Resume() {
+export function Resume() {
   return (
     <Link
       href="/resume.pdf"

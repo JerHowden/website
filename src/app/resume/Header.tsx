@@ -4,7 +4,7 @@ type HeaderProps = {
   title: string
 }
 
-export default function Header({ title }: HeaderProps) {
+export function Header({ title }: HeaderProps) {
   return (
     <Stack
       direction="column"

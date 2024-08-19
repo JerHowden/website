@@ -28,7 +28,7 @@ function DetailList({ details }: DetailListProps) {
   )
 }
 
-export default function Section({ company, location, startDate, endDate, roles }: SectionProps) {
+export function Section({ company, location, startDate, endDate, roles }: SectionProps) {
   return (
     <Stack
       direction="column"

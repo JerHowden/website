@@ -1,6 +1,6 @@
 import { Container } from '@mui/material'
 import { Metadata } from 'next'
-import Resume from './Resume'
+import { Resume } from './Resume'
 
 export const metadata: Metadata = {
   title: "Jeremiah's Resume",

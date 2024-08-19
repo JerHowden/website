@@ -1,7 +1,7 @@
 import { Skill } from '@/lib'
 import { Stack, Typography } from '@mui/material'
 
-export default function SkillList({ domain, list }: Skill) {
+export function SkillList({ domain, list }: Skill) {
   return (
     <Stack
       direction="row"
