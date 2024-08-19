@@ -1,8 +1,9 @@
-import { faSpotify } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faLinkedin, faSpotify } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Container, Stack } from '@mui/material'
+import { Button, Container, IconButton, Stack } from '@mui/material'
 import { Link } from '../Link'
 import { LogoLink } from './LogoLink'
+import { faFile, faFileAlt, faFilePdf, faFileText, faMoon } from '@fortawesome/free-solid-svg-icons'
 
 export function Header() {
   return (
@@ -27,28 +28,43 @@ export function Header() {
           direction="row"
           flexWrap="nowrap"
           alignItems="center"
+          gap={4}
         >
-          <LogoLink
-            startIcon={<FontAwesomeIcon icon={faSpotify} />}
-            size="small"
+          <Link
+            href="spotify.com"
+            title="spotify ↗"
+            TypographyProps={{ variant: 'subheadingEmphasis' }}
           >
             Spotify
-          </LogoLink>
-          <LogoLink
-            startIcon={<FontAwesomeIcon icon={faSpotify} />}
-            size="medium"
+          </Link>
+          <Link
+            href="https://www.github.com/JerHowden"
+            title="github ↗"
+            TypographyProps={{ variant: 'subheadingEmphasis' }}
           >
-            Spotify
-          </LogoLink>
-          <LogoLink
-            startIcon={<FontAwesomeIcon icon={faSpotify} />}
-            size="large"
+            GitHub
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/jeremiah-howden"
+            title="linkedin ↗"
+            TypographyProps={{ variant: 'subheadingEmphasis' }}
           >
-            Spotify
-          </LogoLink>
-          <LogoLink size="small">Spotify</LogoLink>
-          <LogoLink size="medium">Spotify</LogoLink>
-          <LogoLink size="large">Spotify</LogoLink>
+            LinkedIn
+          </Link>
+          <Link
+            href="/resume"
+            title="resume"
+            TypographyProps={{ variant: 'subheadingEmphasis' }}
+          >
+            Resume
+          </Link>
+          <IconButton size="small">
+            <FontAwesomeIcon
+              size="1x"
+              width="1em"
+              icon={faMoon}
+            />
+          </IconButton>
         </Stack>
       </Stack>
     </Container>
