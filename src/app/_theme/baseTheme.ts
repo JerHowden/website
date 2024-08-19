@@ -304,37 +304,37 @@ export const baseTheme: ThemeOptions = {
   },
   components: {
     MuiButton: {
-      styleOverrides: {
-        root: {
-          flexDirection: 'row',
-          alignItems: 'center',
-          lineHeight: 1,
-        },
-        sizeLarge: {
-          fontSize: '1em',
-        },
-        sizeMedium: {
-          fontSize: '0.943em',
-        },
-        sizeSmall: {
-          fontSize: '0.835em',
-        },
-        iconSizeLarge: {
-          // width: '1.272em',
-          marginRight: 6,
-          marginLeft: -4,
-        },
-        iconSizeMedium: {
-          // width: '1.129em',
-          marginRight: 5,
-          marginLeft: -2,
-        },
-        iconSizeSmall: {
-          // width: '1em',
-          marginRight: 4,
-          marginLeft: -0.5,
-        },
-      },
+      // styleOverrides: {
+      //   root: {
+      //     flexDirection: 'row',
+      //     alignItems: 'center',
+      //     lineHeight: 1,
+      //   },
+      //   sizeLarge: {
+      //     fontSize: '1em',
+      //   },
+      //   sizeMedium: {
+      //     fontSize: '0.943em',
+      //   },
+      //   sizeSmall: {
+      //     fontSize: '0.835em',
+      //   },
+      //   iconSizeLarge: {
+      //     // width: '1.272em',
+      //     marginRight: 6,
+      //     marginLeft: -4,
+      //   },
+      //   iconSizeMedium: {
+      //     // width: '1.129em',
+      //     marginRight: 5,
+      //     marginLeft: -2,
+      //   },
+      //   iconSizeSmall: {
+      //     // width: '1em',
+      //     marginRight: 4,
+      //     marginLeft: -0.5,
+      //   },
+      // },
     },
   },
 } as const
