@@ -4,6 +4,7 @@ import { getNowPlaying } from './api'
 
 async function getServerSideProps() {
   const nowPlaying = await getNowPlaying()
+  console.log({ nowPlaying })
   return nowPlaying
 }
 
