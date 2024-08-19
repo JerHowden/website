@@ -23,7 +23,6 @@ const getAccessToken = async () => {
 
 const callSpotify = async () => {
   const response = await getAccessToken()
-  // console.log('response response', response)
 
   return fetch(NOW_PLAYING_ENDPOINT, {
     headers: {
@@ -52,8 +51,8 @@ export async function getNowPlaying(): Promise<NowPlaying> {
   const isPlaying = song.is_playing
   let title = song.item?.name
   let artist = song.item?.artists.map((artist: { name: string }) => artist.name).join(', ')
-  // const album = song.item.album.name
-  // const albumImageUrl = song.item.album.images[0].url
+  const album = song.item.album.name
+  const albumImageUrl = song.item.album.images[0].url
   const songURL = song.item?.external_urls.spotify
 
   if (isPlaying && song.currently_playing_type === 'episode') {
@@ -61,12 +60,14 @@ export async function getNowPlaying(): Promise<NowPlaying> {
     artist = 'on Spotify'
   }
 
-  // res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=30')
+  // response.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=30')
 
   return {
-    artist,
     isPlaying,
-    songURL,
+    artist,
+    album,
+    albumImageUrl,
     title,
+    songURL,
   }
 }
