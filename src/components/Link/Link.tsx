@@ -29,7 +29,7 @@ export function Link({ children, external, TypographyProps, ...props }: LinkProp
             transform: 'scaleX(0)',
             borderBottomStyle: 'solid',
             borderBottomWidth: 1,
-            borderColor: 'white',
+            borderColor: 'text.primary',
             content: '""',
             transitionProperty: 'all',
             transitionDuration: '0.3s',

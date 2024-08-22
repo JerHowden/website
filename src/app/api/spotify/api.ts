@@ -7,7 +7,7 @@ const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-pla
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`
 
 const getAccessToken = async () => {
-  const response = await fetch(TOKEN_ENDPOINT, {
+  const tokenResponse = await fetch(TOKEN_ENDPOINT, {
     method: 'POST',
     headers: {
       Authorization: `Basic ${basic}`,
@@ -16,16 +16,16 @@ const getAccessToken = async () => {
     body: 'grant_type=refresh_token&refresh_token=' + refreshToken,
   })
 
-  return response.json()
+  return tokenResponse.json()
 }
 
 export const getNowPlaying = async () => {
-  const response = await getAccessToken()
-  // console.log('response response', response)
+  const token = await getAccessToken()
+  console.log('\n\ntoken\n\n', token)
 
   return fetch(NOW_PLAYING_ENDPOINT, {
     headers: {
-      Authorization: `Bearer ${response.access_token}`,
+      Authorization: `Bearer ${token.access_token}`,
     },
   })
 }

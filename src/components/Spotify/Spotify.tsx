@@ -1,15 +1,13 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+'use client'
+
 import { faSpotify } from '@fortawesome/free-brands-svg-icons'
-import { getNowPlaying } from './api'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import useSWR from 'swr'
 
-async function getServerSideProps() {
-  const nowPlaying = await getNowPlaying()
-  console.log({ nowPlaying })
-  return nowPlaying
-}
+export function Spotify() {
+  const { data, isLoading, error } = useSWR('/api/spotify')
 
-export async function Spotify() {
-  const data = await getServerSideProps()
+  console.log({ data, isLoading, error })
 
   return (
     <div

@@ -5,7 +5,7 @@ import { Stack } from '@mui/material'
 import { Metadata } from 'next'
 import { ReactNode } from 'react'
 import topo from '../../public/backgrounds/topo-sample.jpg'
-import { ThemeRegistry } from './_theme'
+import { Providers } from './_providers'
 
 export const metadata: Metadata = {
   title: 'Jeremiah Howden',
@@ -49,14 +49,14 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <ThemeRegistry>
+    <Providers>
       <html
         lang="en"
         style={{
           background: `url(${topo.src})`,
         }}
       >
-        <body>
+        <body style={{ transition: 'background-color 250ms ease-in-out' }}>
           <Stack
             direction="column"
             display="flex"
@@ -70,6 +70,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           </Stack>
         </body>
       </html>
-    </ThemeRegistry>
+    </Providers>
   )
 }

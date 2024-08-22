@@ -1,1 +1,0 @@
-export { getNowPlaying } from './spotify'
