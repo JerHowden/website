@@ -2,10 +2,11 @@
 
 import { createTheme, CssBaseline, ThemeProvider, useMediaQuery } from '@mui/material'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
-import { ReactNode } from 'react'
+import { ReactNode, useMemo } from 'react'
 import { baseTheme } from './baseTheme'
 import { darkMode } from './darkMode'
 import { lightMode } from './lightMode'
+import { useLocalStorage } from '@/lib'
 
 export const lightTheme = createTheme({
   ...baseTheme,
@@ -27,9 +28,15 @@ export const darkTheme = createTheme({
 
 export function ThemeRegistry({ children }: { children: ReactNode }) {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
-  console.log({ prefersDarkMode })
+  const [palette, setPalette] = useLocalStorage('palette')
 
-  const modedTheme = prefersDarkMode ? darkTheme : lightTheme
+  const modedTheme = useMemo(() => {
+    if (!palette) {
+      setPalette(prefersDarkMode ? 'dark' : 'light')
+      return prefersDarkMode ? darkTheme : lightTheme
+    }
+    return palette === 'dark' ? darkTheme : lightTheme
+  }, [prefersDarkMode, palette])
 
   return (
     <AppRouterCacheProvider>

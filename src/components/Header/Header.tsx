@@ -4,6 +4,7 @@ import { Button, Container, IconButton, Stack } from '@mui/material'
 import { Link } from '../Link'
 import { LogoLink } from './LogoLink'
 import { faFile, faFileAlt, faFilePdf, faFileText, faMoon } from '@fortawesome/free-solid-svg-icons'
+import { ToggleTheme } from './ToggleTheme'
 
 export function Header() {
   return (
@@ -58,13 +59,7 @@ export function Header() {
           >
             Resume
           </Link>
-          <IconButton size="small">
-            <FontAwesomeIcon
-              size="1x"
-              width="1em"
-              icon={faMoon}
-            />
-          </IconButton>
+          <ToggleTheme />
         </Stack>
       </Stack>
     </Container>
