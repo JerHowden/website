@@ -12,6 +12,7 @@ const getAccessToken = async () => {
     headers: {
       Authorization: `Basic ${basic}`,
       'Content-Type': 'application/x-www-form-urlencoded',
+      'Cache-Control': 'max-age=3600',
     },
     body: 'grant_type=refresh_token&refresh_token=' + refreshToken,
   })
@@ -21,7 +22,7 @@ const getAccessToken = async () => {
 
 export const getNowPlaying = async () => {
   const token = await getAccessToken()
-  console.log('\n\ntoken\n\n', token)
+  // console.log('\n\ntoken\n\n', token)
 
   return fetch(NOW_PLAYING_ENDPOINT, {
     headers: {

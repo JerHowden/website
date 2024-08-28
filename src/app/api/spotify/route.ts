@@ -11,13 +11,12 @@ type SpotifySong = {
   songURL: string
 }
 
-export async function GET(request: Request) {
+export async function GET() {
   const nowPlaying = await getNowPlaying()
   // console.log('\n --- now playing response ---\n', nowPlaying, '\n')
 
-  if (nowPlaying.status === 204 || nowPlaying.status > 400) {
-    // console.log('\nInvalid response in now-playing.ts\n', nowPlaying)
-    return nowPlaying
+  if (!nowPlaying.ok || nowPlaying.status === 204) {
+    return Response.json(nowPlaying)
   }
 
   const song = await nowPlaying.json()
