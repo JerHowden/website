@@ -4,7 +4,6 @@ import { Footer, Header } from '@/components'
 import { Stack } from '@mui/material'
 import { Metadata } from 'next'
 import { ReactNode } from 'react'
-import topo from '../../public/backgrounds/topo-sample.jpg'
 import { Providers } from './_providers'
 
 export const metadata: Metadata = {
@@ -50,13 +49,8 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <Providers>
-      <html
-        lang="en"
-        style={{
-          background: `url(${topo.src})`,
-        }}
-      >
-        <body style={{ transition: 'background-color 250ms ease-in-out' }}>
+      <html lang="en">
+        <body>
           <Stack
             direction="column"
             display="flex"

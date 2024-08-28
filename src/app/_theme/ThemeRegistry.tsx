@@ -1,12 +1,12 @@
 'use client'
 
+import { useLocalStorage } from '@/lib'
 import { createTheme, CssBaseline, ThemeProvider, useMediaQuery } from '@mui/material'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
-import { ReactNode, useMemo } from 'react'
+import { ReactNode, useEffect, useMemo } from 'react'
 import { baseTheme } from './baseTheme'
 import { darkMode } from './darkMode'
 import { lightMode } from './lightMode'
-import { useLocalStorage } from '@/lib'
 
 export const lightTheme = createTheme({
   ...baseTheme,
@@ -31,12 +31,18 @@ export function ThemeRegistry({ children }: { children: ReactNode }) {
   const [palette, setPalette] = useLocalStorage('palette')
 
   const modedTheme = useMemo(() => {
+    console.log('theme registry', palette)
     if (!palette) {
-      setPalette(prefersDarkMode ? 'dark' : 'light')
+      console.log('no palette theme regsitry', !!window, !!localStorage)
+      // setPalette(prefersDarkMode ? 'dark' : 'light')
       return prefersDarkMode ? darkTheme : lightTheme
     }
     return palette === 'dark' ? darkTheme : lightTheme
   }, [prefersDarkMode, palette])
+
+  useEffect(() => {
+    console.log({ modedTheme })
+  })
 
   return (
     <AppRouterCacheProvider>

@@ -9,10 +9,11 @@ type StorageKeys = keyof StorageDict
 export const useLocalStorage = (key: StorageKeys) => {
   const [storage, _setStorage] = useState<StorageDict[typeof key]>()
   useEffect(() => {
-    const handleStorage = () => {
+    function handleStorage() {
       _setStorage(JSON.parse(localStorage.getItem(key) ?? '{}'))
     }
 
+    handleStorage()
     window.addEventListener('storage', handleStorage)
     return () => window.removeEventListener('storage', handleStorage)
   }, [])

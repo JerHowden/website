@@ -1,4 +1,5 @@
 import { ThemeOptions } from '@mui/material'
+import topo from '../../../public/backgrounds/topo-sample.jpg'
 
 export const darkMode: ThemeOptions = {
   palette: {
@@ -26,6 +27,7 @@ export const darkMode: ThemeOptions = {
       styleOverrides: {
         html: {
           backgroundColor: '#2C3A35',
+          background: `url(${topo.src})`,
         },
         body: {
           width: '100%',
@@ -34,6 +36,7 @@ export const darkMode: ThemeOptions = {
           margin: 0,
           padding: 0,
           color: 'rgba(255, 255, 255, 0.9)',
+          transition: 'background-color 250ms ease-in-out',
         },
       },
     },
