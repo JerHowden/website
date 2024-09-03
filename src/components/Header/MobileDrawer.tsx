@@ -60,15 +60,13 @@ export function MobileDrawer({ open, setOpen }: MobileDrawerProps) {
           >
             <LogoLink
               size="large"
-              startIcon={
-                <FontAwesomeIcon
-                  icon={faGithub}
-                  size="3x"
-                  style={{ aspectRatio: '1 / 1' }}
-                />
-              }
+              title="GitHub"
             >
-              GitHub
+              <FontAwesomeIcon
+                icon={faGithub}
+                size="3x"
+                style={{ aspectRatio: '1 / 1' }}
+              />
             </LogoLink>
           </a>
           <a
@@ -80,15 +78,13 @@ export function MobileDrawer({ open, setOpen }: MobileDrawerProps) {
           >
             <LogoLink
               size="large"
-              startIcon={
-                <FontAwesomeIcon
-                  icon={faLinkedin}
-                  size="3x"
-                  style={{ aspectRatio: '1 / 1' }}
-                />
-              }
+              title="LinkedIn"
             >
-              LinkedIn
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                size="3x"
+                style={{ aspectRatio: '1 / 1' }}
+              />
             </LogoLink>
           </a>
           <Link
@@ -101,17 +97,15 @@ export function MobileDrawer({ open, setOpen }: MobileDrawerProps) {
           >
             <LogoLink
               size="large"
-              startIcon={
-                <FontAwesomeIcon
-                  icon={faFileLines}
-                  size="3x"
-                  style={{ aspectRatio: '1 / 1' }}
-                />
-              }
+              title="Resume"
               disabled={onResume}
               onClick={() => setTimeout(() => setOpen(false), 200)}
             >
-              Resume
+              <FontAwesomeIcon
+                icon={faFileLines}
+                size="3x"
+                style={{ aspectRatio: '1 / 1' }}
+              />
             </LogoLink>
           </Link>
         </Stack>

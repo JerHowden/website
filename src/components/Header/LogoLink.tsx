@@ -1,30 +1,36 @@
-import { Button, ButtonProps } from '@mui/material'
+import { Button, ButtonProps, IconButton, Stack, Typography } from '@mui/material'
 import { ReactNode } from 'react'
 
 type LogoLinkProps = ButtonProps & {
   children: ReactNode
+  title: string
 }
 
-export function LogoLink({ children, ...props }: LogoLinkProps) {
+export function LogoLink({ children, title, ...props }: LogoLinkProps) {
   return (
-    <Button
-      size="large"
-      color="primary"
-      variant="contained"
-      sx={{
-        flexDirection: 'column',
-        gap: 3,
-        borderRadius: 2,
-        '& .MuiButton-icon': {
-          mx: 0,
-          '& svg': {
-            fontSize: '3em',
-          },
-        },
-      }}
-      {...props}
+    <Stack
+      direction="column"
+      gap={2}
+      alignItems="center"
     >
-      {children}
-    </Button>
+      <IconButton
+        size="large"
+        variant="contained"
+        sx={{
+          color: (theme) => theme.palette.primary.main,
+          backgroundColor: (theme) => `${theme.palette.primary.main}80`,
+          borderRadius: 2,
+        }}
+        {...props}
+      >
+        {children}
+      </IconButton>
+      <Typography
+        variant="labelEmphasis"
+        color="textPrimary"
+      >
+        {title}
+      </Typography>
+    </Stack>
   )
 }
