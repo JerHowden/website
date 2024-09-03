@@ -67,7 +67,8 @@ export function Footer() {
             </a>
           </Stack>
           <Link
-            href="mailto:jeremiah@jeremiahhowden.com"
+            // href="mailto:jeremiah@jeremiahhowden.com"
+            href="mailto:jeremiahhowden@gmail.com"
             title="contact me"
             TypographyProps={{ color: 'text.secondary' }}
             external
