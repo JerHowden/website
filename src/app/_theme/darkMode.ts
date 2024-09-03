@@ -38,6 +38,7 @@ export const darkMode: ThemeOptions = {
         },
         a: {
           color: 'rgba(255, 255, 255, 0.9)',
+          textDecoration: 'none',
         },
       },
     },
