@@ -17,36 +17,12 @@ export const lightTheme = createTheme({
   },
 })
 
-export const darkTheme = createTheme({
-  ...baseTheme,
-  ...darkMode,
-  components: {
-    ...baseTheme.components,
-    ...darkMode.components,
-  },
-})
+export const darkTheme = createTheme(baseTheme, darkMode)
 
 export function ThemeRegistry({ children }: { children: ReactNode }) {
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
-  const [palette, setPalette] = useLocalStorage('palette')
-
-  const modedTheme = useMemo(() => {
-    console.log('theme registry', palette)
-    if (!palette) {
-      console.log('no palette theme regsitry', !!window, !!localStorage)
-      // setPalette(prefersDarkMode ? 'dark' : 'light')
-      return prefersDarkMode ? darkTheme : lightTheme
-    }
-    return palette === 'dark' ? darkTheme : lightTheme
-  }, [prefersDarkMode, palette])
-
-  useEffect(() => {
-    console.log({ modedTheme })
-  })
-
   return (
     <AppRouterCacheProvider>
-      <ThemeProvider theme={modedTheme}>
+      <ThemeProvider theme={darkTheme}>
         <CssBaseline />
         {children}
       </ThemeProvider>
