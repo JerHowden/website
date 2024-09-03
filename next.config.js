@@ -6,4 +6,14 @@ module.exports = {
       transform: '@mui/icons-material/{{member}}',
     },
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'i.scdn.co',
+        port: '',
+        pathname: '/image/**',
+      },
+    ],
+  },
 }

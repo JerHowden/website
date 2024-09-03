@@ -1,63 +1,147 @@
 'use client'
 
 import { faSpotify } from '@fortawesome/free-brands-svg-icons'
+import { faImage, faImagePortrait, faRecordVinyl } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Box, Card, Collapse, keyframes, Stack, SxProps, Typography } from '@mui/material'
+import Image from 'next/image'
 import useSWR from 'swr'
 
-export function Spotify() {
+const pulse = keyframes`
+  50% {
+    opacity: .5;
+  }
+`
+
+type SpotifyProps = {
+  size: 'medium' | 'large'
+}
+
+export function Spotify({ size }: SpotifyProps) {
   const { data, isLoading, error } = useSWR('/api/spotify')
 
-  console.log({ data, isLoading, error })
+  const cardSx: SxProps = {
+    cursor: 'pointer',
+    title: data?.isPlaying ? 'Spotify ↗' : 'Not listening to Spotify',
+    ...(size === 'medium'
+      ? {
+          p: 0,
+          backgroundColor: 'transparent',
+          backgroundImage: 'none',
+          boxShadow: 'none',
+        }
+      : {}),
+    ...(size === 'large'
+      ? {
+          p: 4,
+          backgroundColor: data?.isPlaying ? '#1DB954' : 'text.disabled',
+          borderRadius: 2,
+        }
+      : {}),
+  }
 
   return (
-    <div
-      className="flex flex-row items-center text-gray-400 gap-x-2 group"
-      title={
-        data?.isPlaying
-          ? data?.songURL
-            ? "link to what i'm listening to"
-            : "what i'm listening to"
-          : 'spotify inactive'
-      }
+    <a
+      href={data?.songURL}
+      style={{
+        textDecoration: 'none',
+        pointerEvents: data?.isPlaying && data?.songURL ? 'all' : 'none',
+      }}
     >
-      <FontAwesomeIcon
-        icon={faSpotify}
-        className={`w-7 h-7 ${
-          data?.isPlaying
-            ? 'text-green-600 dark:text-green-500  animate-pulse md:h-9 md:w-9'
-            : 'group-hover:animate-none'
-        } ${data?.songURL ? 'group-hover:text-black dark:group-hover:text-white' : ''}`}
-      />
-      {data?.isPlaying ? (
-        <a
-          className={`flex flex-col gap-x-2 ${data?.songURL ? '' : ' pointer-events-none'}`}
-          href={data?.songURL || ''}
+      <Card sx={cardSx}>
+        <Stack
+          direction="row"
+          gap={4}
+          justifyContent="space-between"
+          alignItems="center"
         >
-          <div
-            className={`text-sm font-medium text-green-700 dark:text-green-400 md:text-base ${
-              data?.songURL ? 'dark:group-hover:text-white group-hover:text-black' : ''
-            }`}
+          <Collapse
+            in={data?.isPlaying}
+            orientation="horizontal"
+            unmountOnExit
           >
-            {data?.title || ''}
-          </div>
-          <div
-            className={`text-xs text-green-600 dark:font-light dark:text-green-500 ${
-              data?.songURL ? 'group-hover:text-black dark:group-hover:text-white' : ''
-            }`}
+            <Stack
+              direction="row"
+              gap={4}
+              alignItems="center"
+            >
+              <Image
+                src={data?.albumImageURL}
+                width={size === 'medium' ? 36 : 50}
+                height={size === 'medium' ? 36 : 50}
+                alt={data?.album ?? 'Album Art'}
+                style={{ borderRadius: 2 }}
+                title={`Album - ${data?.album}`}
+              />
+              <Stack
+                direction="column"
+                justifyContent="space-evenly"
+              >
+                <Typography
+                  variant="body1Emphasis"
+                  color="textPrimary"
+                  title={`Song - ${data?.title}`}
+                  sx={{ whiteSpace: 'pre' }}
+                >
+                  {data?.title}
+                </Typography>
+                <Typography
+                  variant="label"
+                  color="textSecondary"
+                  title={`Artist - ${data?.artist}`}
+                >
+                  {data?.artist}
+                </Typography>
+              </Stack>
+            </Stack>
+          </Collapse>
+          <Stack
+            direction="row"
+            gap={4}
           >
-            {data?.artist || ''}
-          </div>
-        </a>
-      ) : (
-        <div>Not Playing</div>
-      )}
-      <span
-        className={`hidden text-xl text-black ${
-          data?.isPlaying && data?.songURL ? 'group-hover:inline' : ''
-        } dark:text-white`}
-      >
-        ↗
-      </span>
-    </div>
+            <Box
+              display="flex"
+              alignItems="center"
+              sx={{
+                animation: data?.isPlaying
+                  ? `${pulse} 2s cubic-bezier(.4,0,.6,1) infinite`
+                  : 'none',
+                color: data?.isPlaying
+                  ? size === 'medium'
+                    ? '#1DB954'
+                    : 'text.primary'
+                  : 'text.secondary',
+              }}
+            >
+              <FontAwesomeIcon
+                icon={faSpotify}
+                size={size === 'medium' ? '2x' : '3x'}
+                style={{ aspectRatio: '1 / 1' }}
+                title="Spotify ↗"
+              />
+            </Box>
+            <Collapse
+              in={size === 'large' && !data?.isPlaying}
+              orientation="horizontal"
+              unmountOnExit
+              sx={{
+                '& .MuiCollapse-wrapperInner': {
+                  display: 'flex',
+                  alignItems: 'center',
+                },
+              }}
+            >
+              <Typography
+                variant="body1Emphasis"
+                color="textSecondary"
+                sx={{ whiteSpace: 'pre' }}
+              >
+                Not Listening
+              </Typography>
+            </Collapse>
+          </Stack>
+        </Stack>
+      </Card>
+    </a>
   )
 }

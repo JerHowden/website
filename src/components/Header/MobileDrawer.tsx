@@ -3,11 +3,12 @@
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faFileLines } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Button, Divider, Stack, SwipeableDrawer } from '@mui/material'
+import { Divider, Stack, SwipeableDrawer } from '@mui/material'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Spotify } from '../Spotify'
 import { useMemo } from 'react'
+import { Spotify } from '../Spotify'
+import { LogoLink } from './LogoLink'
 
 type MobileDrawerProps = {
   open: boolean
@@ -42,78 +43,78 @@ export function MobileDrawer({ open, setOpen }: MobileDrawerProps) {
         flexWrap="nowrap"
         gap={5}
         px={4}
-        py={6}
+        py={5}
       >
-        <Spotify />
-        <Divider
-          variant="fullWidth"
-          sx={{
-            my: 4,
-          }}
-        />
-        <a
-          href="https://www.github.com/JerHowden"
-          title="github ↗"
+        <Spotify size="large" />
+        <Stack
+          flex={1}
+          direction="row"
+          justifyContent="space-between"
         >
-          <Button
-            size="large"
-            startIcon={
-              <FontAwesomeIcon
-                icon={faGithub}
-                size="1x"
-                style={{ aspectRatio: '1 / 1' }}
-              />
-            }
-            sx={{ ml: '-8px' }}
+          <a
+            href="https://www.github.com/JerHowden"
+            title="github ↗"
+            style={{
+              flex: 0,
+            }}
           >
-            GitHub
-          </Button>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/jeremiah-howden"
-          title="linkedin ↗"
-        >
-          <Button
-            size="large"
-            startIcon={
-              <FontAwesomeIcon
-                icon={faLinkedin}
-                size="1x"
-                style={{ aspectRatio: '1 / 1' }}
-              />
-            }
-            sx={{ ml: '-8px' }}
+            <LogoLink
+              size="large"
+              startIcon={
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  size="3x"
+                  style={{ aspectRatio: '1 / 1' }}
+                />
+              }
+            >
+              GitHub
+            </LogoLink>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/jeremiah-howden"
+            title="linkedin ↗"
+            style={{
+              flex: 0,
+            }}
           >
-            LinkedIn
-          </Button>
-        </a>
-        <Link
-          href="/resume"
-          title="resume"
-          style={
-            onResume
-              ? {
-                  pointerEvents: 'none',
-                }
-              : {}
-          }
-        >
-          <Button
-            size="large"
-            startIcon={
-              <FontAwesomeIcon
-                icon={faFileLines}
-                size="1x"
-                style={{ aspectRatio: '1 / 1' }}
-              />
-            }
-            disabled={onResume}
-            onClick={() => setTimeout(() => setOpen(false), 200)}
-            sx={{ ml: '-8px' }}
+            <LogoLink
+              size="large"
+              startIcon={
+                <FontAwesomeIcon
+                  icon={faLinkedin}
+                  size="3x"
+                  style={{ aspectRatio: '1 / 1' }}
+                />
+              }
+            >
+              LinkedIn
+            </LogoLink>
+          </a>
+          <Link
+            href="/resume"
+            title="resume"
+            style={{
+              pointerEvents: onResume ? 'none' : 'all',
+              flex: 0,
+            }}
           >
-            Resume
-          </Button>
-        </Link>
+            <LogoLink
+              size="large"
+              startIcon={
+                <FontAwesomeIcon
+                  icon={faFileLines}
+                  size="3x"
+                  style={{ aspectRatio: '1 / 1' }}
+                />
+              }
+              disabled={onResume}
+              onClick={() => setTimeout(() => setOpen(false), 200)}
+            >
+              Resume
+            </LogoLink>
+          </Link>
+        </Stack>
       </Stack>
     </SwipeableDrawer>
   )

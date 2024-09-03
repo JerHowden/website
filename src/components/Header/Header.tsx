@@ -6,6 +6,7 @@ import { Box, Collapse, Container, IconButton, Stack, useMediaQuery, useTheme } 
 import { useEffect, useState } from 'react'
 import { Link } from '../Link'
 import { MobileDrawer } from './MobileDrawer'
+import { Spotify } from '../Spotify'
 
 export function Header() {
   const theme = useTheme()
@@ -14,7 +15,7 @@ export function Header() {
 
   const [actions, setActions] = useState<'links' | 'menu' | null>(null)
   const [drawerOpen, setDrawerOpen] = useState(false)
-  const [backdropBlur, setBackdropBlur] = useState(Math.min(window.scrollY / 8, 8))
+  const [backdropBlur, setBackdropBlur] = useState(!!window ? Math.min(window.scrollY / 8, 8) : 0)
 
   useEffect(() => {
     function onScroll() {
@@ -36,105 +37,108 @@ export function Header() {
   }, [loaded, mobile])
 
   return (
-    <Container
-      maxWidth="md"
+    <Box
       sx={{
-        px: 4,
-        position: {
-          xs: 'sticky',
-          md: 'initial',
-        },
+        width: '100%',
+        position: 'sticky',
         top: 0,
-        backdropFilter: {
-          xs: `blur(${backdropBlur}px)`,
-          md: 'none',
-        },
+        backdropFilter: `blur(${backdropBlur}px)`,
         zIndex: 100,
       }}
     >
-      <Stack
-        direction="row"
-        flexWrap="nowrap"
-        height={80}
-        alignItems="center"
-        justifyContent="space-between"
-        gap={5}
+      <Container
+        maxWidth="md"
+        sx={{
+          px: 4,
+        }}
       >
-        <Link
-          href="/"
-          TypographyProps={{
-            variant: 'title3Emphasis',
-          }}
+        <Stack
+          direction="row"
+          flexWrap="nowrap"
+          height={80}
+          alignItems="center"
+          justifyContent="space-between"
+          gap={5}
         >
-          jeremiahhowden
-        </Link>
-        <Box
-          sx={{
-            display: 'grid',
-            '& .MuiCollapse-wrapperInner': {
-              display: 'flex',
-              justifyContent: 'flex-end',
-            },
-          }}
-        >
-          <Collapse
-            sx={{ gridArea: '1 / 1' }}
-            in={actions === 'links'}
+          <Link
+            href="/"
+            TypographyProps={{
+              variant: 'title3Emphasis',
+            }}
           >
-            <Stack
-              direction="row"
-              flexWrap="nowrap"
-              alignItems="center"
-              gap={5}
-            >
-              <Link
-                href="https://www.github.com/JerHowden"
-                title="github ↗"
-                TypographyProps={{ variant: 'subheadingEmphasis' }}
-                external
-              >
-                GitHub
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/jeremiah-howden"
-                title="linkedin ↗"
-                TypographyProps={{ variant: 'subheadingEmphasis' }}
-                external
-              >
-                LinkedIn
-              </Link>
-              <Link
-                href="/resume"
-                title="resume"
-                TypographyProps={{ variant: 'subheadingEmphasis' }}
-              >
-                Resume
-              </Link>
-            </Stack>
+            jeremiahhowden
+          </Link>
+          <Collapse in={actions === 'links'}>
+            <Spotify size="medium" />
           </Collapse>
-          <Collapse
-            sx={{ gridArea: '1 / 1' }}
-            in={actions === 'menu'}
+          <Box
+            sx={{
+              display: 'grid',
+              '& .MuiCollapse-wrapperInner': {
+                display: 'flex',
+                justifyContent: 'flex-end',
+              },
+            }}
           >
-            <IconButton
-              sx={{ p: 2, mr: -2 }}
-              onClick={() => setDrawerOpen(true)}
-              color="primary"
-              size="large"
+            <Collapse
+              sx={{ gridArea: '1 / 1' }}
+              in={actions === 'links'}
             >
-              <FontAwesomeIcon
-                style={{ aspectRatio: '1 / 1' }}
-                size="1x"
-                icon={faBars}
-              />
-            </IconButton>
-          </Collapse>
-        </Box>
-      </Stack>
-      <MobileDrawer
-        open={drawerOpen}
-        setOpen={setDrawerOpen}
-      />
-    </Container>
+              <Stack
+                direction="row"
+                flexWrap="nowrap"
+                alignItems="center"
+                gap={5}
+              >
+                <Link
+                  href="https://www.github.com/JerHowden"
+                  title="github ↗"
+                  TypographyProps={{ variant: 'subheadingEmphasis' }}
+                  external
+                >
+                  GitHub
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/in/jeremiah-howden"
+                  title="linkedin ↗"
+                  TypographyProps={{ variant: 'subheadingEmphasis' }}
+                  external
+                >
+                  LinkedIn
+                </Link>
+                <Link
+                  href="/resume"
+                  title="resume"
+                  TypographyProps={{ variant: 'subheadingEmphasis' }}
+                >
+                  Resume
+                </Link>
+              </Stack>
+            </Collapse>
+            <Collapse
+              sx={{ gridArea: '1 / 1' }}
+              in={actions === 'menu'}
+            >
+              <IconButton
+                sx={{ p: 2, mr: -2 }}
+                onClick={() => setDrawerOpen(true)}
+                color="primary"
+                size="large"
+              >
+                <FontAwesomeIcon
+                  style={{ aspectRatio: '1 / 1' }}
+                  size="1x"
+                  icon={faBars}
+                />
+              </IconButton>
+            </Collapse>
+          </Box>
+        </Stack>
+        <MobileDrawer
+          open={drawerOpen}
+          setOpen={setDrawerOpen}
+        />
+      </Container>
+    </Box>
   )
 }
