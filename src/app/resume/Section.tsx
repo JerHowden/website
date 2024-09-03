@@ -32,10 +32,13 @@ export function Section({ company, location, startDate, endDate, roles }: Sectio
   return (
     <Stack
       direction="column"
-      gap={1}
+      gap={2}
     >
       <Stack
-        direction="row"
+        direction={{
+          xs: 'column',
+          md: 'row',
+        }}
         justifyContent="space-between"
       >
         <Typography
@@ -45,7 +48,7 @@ export function Section({ company, location, startDate, endDate, roles }: Sectio
           {company} — {location}
         </Typography>
         <Typography
-          variant="body1"
+          variant="body2"
           color="text.secondary"
         >
           {startDate} - {endDate}
@@ -58,7 +61,7 @@ export function Section({ company, location, startDate, endDate, roles }: Sectio
           gap={3}
         >
           <Stack direction="column">
-            <Typography variant="headingEmphasis">{role.title}</Typography>
+            <Typography variant="heading">{role.title}</Typography>
             <DetailList details={role.details} />
           </Stack>
           {role.projects.map((project) => (
@@ -68,7 +71,7 @@ export function Section({ company, location, startDate, endDate, roles }: Sectio
               ml="1em"
             >
               <Typography
-                variant="headingEmphasis"
+                variant="heading"
                 sx={{ textDecoration: 'underline' }}
               >
                 {project.title}

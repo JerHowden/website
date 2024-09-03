@@ -21,7 +21,10 @@ export function Resume() {
           backgroundColor: 'background.default',
           color: 'text.primary',
           borderRadius: 0,
-          p: 5,
+          p: {
+            xs: 4,
+            md: 5,
+          },
           '&:hover': {
             boxShadow: 5,
           },
@@ -40,7 +43,7 @@ export function Resume() {
             <Stack direction="column">
               <Typography variant="display2Emphasis">{resume.personal.name}</Typography>
               <Stack
-                direction="row"
+                direction={{ xs: 'column', md: 'row' }}
                 gap={3}
               >
                 <Typography
@@ -52,6 +55,12 @@ export function Resume() {
                 <Typography
                   variant="body2"
                   color="text.secondary"
+                  sx={{
+                    display: {
+                      xs: 'none',
+                      md: 'block',
+                    },
+                  }}
                 >
                   ●
                 </Typography>
@@ -101,7 +110,8 @@ export function Resume() {
               <Header title="Skills" />
               <Stack
                 direction="column"
-                gap={1}
+                columnGap={1}
+                rowGap={2}
               >
                 {resume.skills.map((skills) => (
                   <SkillList {...skills} />
