@@ -1,12 +1,12 @@
-'use client'
+'use client';
 
-import { resume } from '@/lib'
-import { Card, Stack, Typography } from '@mui/material'
-import Link from 'next/link'
-import { Fade } from 'react-awesome-reveal'
-import { Header } from './Header'
-import { Section } from './Section'
-import { SkillList } from './SkillList'
+import { resume } from '@/lib';
+import { Card, Stack, Typography } from '@mui/material';
+import Link from 'next/link';
+import { Fade } from 'react-awesome-reveal';
+import { Header } from './Header';
+import { Section } from './Section';
+import { SkillList } from './SkillList';
 
 export function Resume() {
   return (
@@ -114,7 +114,10 @@ export function Resume() {
                 rowGap={2}
               >
                 {resume.skills.map((skills) => (
-                  <SkillList {...skills} />
+                  <SkillList
+                    key={skills.domain}
+                    {...skills}
+                  />
                 ))}
               </Stack>
             </Stack>
@@ -122,5 +125,5 @@ export function Resume() {
         </Stack>
       </Card>
     </Link>
-  )
+  );
 }

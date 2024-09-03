@@ -1,9 +1,9 @@
-import { Section as SectionProps } from '@/lib'
-import { Stack, Typography } from '@mui/material'
+import { Section as SectionProps } from '@/lib';
+import { Stack, Typography } from '@mui/material';
 
 type DetailListProps = {
-  details: string[]
-}
+  details: string[];
+};
 
 function DetailList({ details }: DetailListProps) {
   return (
@@ -18,14 +18,14 @@ function DetailList({ details }: DetailListProps) {
       {details.map((detail) => (
         <Typography
           key={detail}
-          variant="body2"
+          variant="body1"
           component="li"
         >
           {detail}
         </Typography>
       ))}
     </ul>
-  )
+  );
 }
 
 export function Section({ company, location, startDate, endDate, roles }: SectionProps) {
@@ -82,5 +82,5 @@ export function Section({ company, location, startDate, endDate, roles }: Sectio
         </Stack>
       ))}
     </Stack>
-  )
+  );
 }
