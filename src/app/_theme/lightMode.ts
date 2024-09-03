@@ -1,5 +1,5 @@
 import { ThemeOptions } from '@mui/material'
-import topo from '../../../public/backgrounds/topo-sample.jpg'
+import topo from '../../../public/backgrounds/topo.jpg'
 
 export const lightMode: ThemeOptions = {
   palette: {

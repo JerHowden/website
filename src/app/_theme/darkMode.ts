@@ -1,5 +1,5 @@
 import { ThemeOptions } from '@mui/material'
-import topo from '../../../public/backgrounds/topo-sample.jpg'
+import topo from '../../../public/backgrounds/topo.jpg'
 
 export const darkMode: ThemeOptions = {
   palette: {
@@ -9,7 +9,7 @@ export const darkMode: ThemeOptions = {
       contrastText: 'rgba(255,255,255,0.9)',
     },
     secondary: {
-      main: '#B87333',
+      main: '#A0642C',
     },
     background: {
       default: '#2C3A35FA',
@@ -28,6 +28,7 @@ export const darkMode: ThemeOptions = {
         html: {
           backgroundColor: '#2C3A35',
           background: `url(${topo.src})`,
+          backgroundSize: '100vh',
           maxHeight: '100vh',
         },
         body: {
