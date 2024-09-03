@@ -1,7 +1,8 @@
 'use client'
 
 import { resume } from '@/lib'
-import { Card, Stack, Typography } from '@mui/material'
+import { Card, Typography } from '@mui/material'
+import Stack from '@mui/material-pigment-css/Stack'
 import Link from 'next/link'
 import { Fade } from 'react-awesome-reveal'
 import { Header } from './Header'

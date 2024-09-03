@@ -1,4 +1,4 @@
-import { Container } from '@mui/material'
+import Container from '@mui/material-pigment-css/Container'
 import { Metadata } from 'next'
 import { Resume } from './Resume'
 

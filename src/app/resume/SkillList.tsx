@@ -1,5 +1,6 @@
 import { Skill } from '@/lib'
-import { Stack, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
+import Stack from '@mui/material-pigment-css/Stack'
 
 export function SkillList({ domain, list }: Skill) {
   return (

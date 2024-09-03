@@ -1,4 +1,5 @@
-import { Divider, Stack, Typography } from '@mui/material'
+import { Divider, Typography } from '@mui/material'
+import Stack from '@mui/material-pigment-css/Stack'
 
 type HeaderProps = {
   title: string

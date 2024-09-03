@@ -1,11 +1,11 @@
-import { Box, Stack } from '@mui/material'
+import { Stack } from '@mui/material'
 
 export function Album() {
   return (
     <Stack direction="column">
-      <Box>Album 1</Box>
-      <Box>Album 2</Box>
-      <Box>Album 3</Box>
+      <div>Album 1</div>
+      <div>Album 2</div>
+      <div>Album 3</div>
     </Stack>
   )
 }

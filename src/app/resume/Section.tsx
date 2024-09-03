@@ -1,5 +1,6 @@
 import { Section as SectionProps } from '@/lib'
-import { Stack, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
+import Stack from '@mui/material-pigment-css/Stack'
 
 type DetailListProps = {
   details: string[]

@@ -1,5 +1,3 @@
-'use client'
-
 import { ReactNode } from 'react'
 import { ThemeRegistry } from '../_theme'
 import { SWRProvider } from './SWRProvider'

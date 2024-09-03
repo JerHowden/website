@@ -1,6 +1,7 @@
-import { ThemeOptions } from '@mui/material'
+import { createTheme } from '@mui/material'
 import { Montserrat } from 'next/font/google'
 import { CSSProperties } from 'react'
+import topo from '../../../public/backgrounds/topo-sample.jpg'
 
 declare module '@mui/material/styles' {
   interface TypographyVariants {
@@ -112,8 +113,55 @@ const scales = [
  *
  * @see https://www.chainlift.io/liftkit#type
  */
-export const baseTheme: ThemeOptions = {
+export const theme = createTheme({
+  cssVariables: true,
   spacing: scales,
+  colorSchemes: {
+    light: {
+      palette: {
+        mode: 'light',
+        primary: {
+          main: '#DB991F',
+          contrastText: 'var(--mui-palette-text-primary)',
+        },
+        secondary: {
+          main: '#B87333',
+        },
+        background: {
+          default: '#D1DCD8',
+          paper: '#A5B6A7',
+        },
+        text: {
+          primary: 'rgba(0, 0, 0, 0.9)',
+          secondary: 'rgba(0, 0, 0, 0.7)',
+          disabled: 'rgba(0, 0, 0, 0.35)',
+        },
+        divider: 'var(--mui-palette-text-secondary)',
+      },
+    },
+    dark: {
+      palette: {
+        mode: 'dark',
+        primary: {
+          main: '#DB991F',
+          contrastText: 'var(--mui-palette-text-primary)',
+        },
+        secondary: {
+          main: '#B87333',
+        },
+        background: {
+          default: '#2C3A35',
+          paper: '#536555',
+        },
+        text: {
+          primary: 'rgba(255, 255, 255, 0.9)',
+          secondary: 'rgba(255, 255, 255, 0.7)',
+          disabled: 'rgba(255, 255, 255, 0.35)',
+        },
+        divider: 'var(--mui-palette-text-secondary)',
+      },
+    },
+  },
   typography: {
     fontFamily: montserrat.style.fontFamily,
     display1: {
@@ -303,38 +351,21 @@ export const baseTheme: ThemeOptions = {
     subtitle2: undefined,
   },
   components: {
-    MuiButton: {
-      // styleOverrides: {
-      //   root: {
-      //     flexDirection: 'row',
-      //     alignItems: 'center',
-      //     lineHeight: 1,
-      //   },
-      //   sizeLarge: {
-      //     fontSize: '1em',
-      //   },
-      //   sizeMedium: {
-      //     fontSize: '0.943em',
-      //   },
-      //   sizeSmall: {
-      //     fontSize: '0.835em',
-      //   },
-      //   iconSizeLarge: {
-      //     // width: '1.272em',
-      //     marginRight: 6,
-      //     marginLeft: -4,
-      //   },
-      //   iconSizeMedium: {
-      //     // width: '1.129em',
-      //     marginRight: 5,
-      //     marginLeft: -2,
-      //   },
-      //   iconSizeSmall: {
-      //     // width: '1em',
-      //     marginRight: 4,
-      //     marginLeft: -0.5,
-      //   },
-      // },
+    MuiCssBaseline: {
+      styleOverrides: {
+        html: {
+          backgroundColor: 'var(--mui-palette-background-default)',
+          background: `url(${topo.src})`,
+        },
+        body: {
+          width: '100%',
+          height: '100%',
+          minHeight: '100%',
+          margin: 0,
+          padding: 0,
+          transition: 'background-color 250ms ease-in-out',
+        },
+      },
     },
   },
-} as const
+})

@@ -1,6 +1,8 @@
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Container, Divider, IconButton, Stack, Typography } from '@mui/material'
+import { Divider, IconButton, Typography } from '@mui/material'
+import Container from '@mui/material-pigment-css/Container'
+import Stack from '@mui/material-pigment-css/Stack'
 import { Link } from '../Link'
 
 export function Footer() {

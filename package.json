@@ -1,6 +1,6 @@
 {
   "name": "jeremiahhowden.com",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -16,8 +16,9 @@
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@mui/material": "^5.16.4",
-    "@mui/material-nextjs": "^5.16.4",
+    "@mui/material": "^6.0.0",
+    "@mui/material-nextjs": "^6.0.0",
+    "@mui/material-pigment-css": "^6.0.0",
     "next": "^14.2.5",
     "react": "^18.3.1",
     "react-awesome-reveal": "^4.2.14",
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.7.0",
+    "@pigment-css/nextjs-plugin": "^0.0.20",
     "@types/node": "^20.14.11",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",

@@ -1,10 +1,12 @@
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import '@mui/material-pigment-css/styles.css'
 
 import { Footer, Header } from '@/components'
-import { Stack } from '@mui/material'
+import Stack from '@mui/material-pigment-css/Stack'
 import { Metadata } from 'next'
 import { ReactNode } from 'react'
 import { Providers } from './_providers'
+import InitColorSchemeScript from '@mui/material/InitColorSchemeScript'
 
 export const metadata: Metadata = {
   title: 'Jeremiah Howden',
@@ -49,8 +51,12 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <Providers>
-      <html lang="en">
+      <html
+        lang="en"
+        suppressHydrationWarning
+      >
         <body>
+          <InitColorSchemeScript />
           <Stack
             direction="column"
             display="flex"
