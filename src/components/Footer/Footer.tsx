@@ -7,7 +7,7 @@ import { Link } from '../Link'
 
 export function Footer() {
   return (
-    <Container maxWidth="md">
+    <div /* maxWidth="md" */>
       <Stack
         direction="column"
         alignItems="stretch"
@@ -68,6 +68,6 @@ export function Footer() {
           </Link>
         </Stack>
       </Stack>
-    </Container>
+    </div>
   )
 }

@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <Container maxWidth="md">
+    <div /* maxWidth="md" */>
       <Spotify />
-    </Container>
+    </div>
   )
 }

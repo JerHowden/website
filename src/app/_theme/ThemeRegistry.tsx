@@ -1,3 +1,5 @@
+'use client'
+
 import { CssBaseline, ThemeProvider } from '@mui/material'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
 import { ReactNode } from 'react'

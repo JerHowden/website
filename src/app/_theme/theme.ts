@@ -1,3 +1,5 @@
+'use client'
+
 import { createTheme } from '@mui/material'
 import { Montserrat } from 'next/font/google'
 import { CSSProperties } from 'react'

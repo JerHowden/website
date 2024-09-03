@@ -1,7 +1,6 @@
 import { faGithub, faLinkedin, faSpotify } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Button, IconButton } from '@mui/material'
-import Container from '@mui/material-pigment-css/Container'
 import Stack from '@mui/material-pigment-css/Stack'
 import { Link } from '../Link'
 import { LogoLink } from './LogoLink'
@@ -10,7 +9,7 @@ import { ToggleTheme } from './ToggleTheme'
 
 export function Header() {
   return (
-    <Container maxWidth="md">
+    <div /* maxWidth="md" */>
       <Stack
         position="sticky"
         direction="row"
@@ -64,6 +63,6 @@ export function Header() {
           <ToggleTheme />
         </Stack>
       </Stack>
-    </Container>
+    </div>
   )
 }

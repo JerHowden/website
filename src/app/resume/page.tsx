@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function ResumePage() {
   return (
-    <Container maxWidth="md">
+    <div /* maxWidth="md" */>
       <Resume />
-    </Container>
+    </div>
   )
 }
