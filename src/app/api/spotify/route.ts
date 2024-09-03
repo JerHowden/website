@@ -24,7 +24,7 @@ export async function GET() {
 
   if (!song.item && !song.currently_playing_type) {
     // console.log('\nNot playing anything in now-playing.ts\n', nowPlaying)
-    return { isPlaying: false }
+    return Response.json({ isPlaying: false })
   }
 
   const isPlaying = song.is_playing
