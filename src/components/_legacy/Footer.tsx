@@ -34,7 +34,7 @@ export default function Footer() {
               Software Developer
             </div>
           </div>
-          <Spotify />
+          <Spotify size="large" />
           <div className="flex text-gray-600 dark:text-gray-400">
             © {new Date().getFullYear()} Jeremiah Howden
           </div>
