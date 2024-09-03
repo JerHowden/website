@@ -5,7 +5,10 @@ import { Link } from '../Link'
 
 export function Footer() {
   return (
-    <Container maxWidth="md">
+    <Container
+      maxWidth="md"
+      sx={{ px: 4 }}
+    >
       <Stack
         direction="column"
         alignItems="stretch"
@@ -17,10 +20,11 @@ export function Footer() {
           variant="fullWidth"
         />
         <Stack
-          direction="row"
+          direction={{ xs: 'column', sm: 'row' }}
           justifyContent="space-between"
           alignItems="center"
-          gap={2}
+          rowGap={3}
+          columnGap={2}
         >
           <Typography
             variant="caption"
@@ -37,7 +41,10 @@ export function Footer() {
               href="https://www.github.com/JerHowden"
               title="github ↗"
             >
-              <IconButton>
+              <IconButton
+                color="primary"
+                size="large"
+              >
                 <FontAwesomeIcon
                   size="1x"
                   icon={faGithub}
@@ -48,7 +55,10 @@ export function Footer() {
               href="https://www.linkedin.com/in/jeremiah-howden"
               title="linkedin ↗"
             >
-              <IconButton>
+              <IconButton
+                color="primary"
+                size="large"
+              >
                 <FontAwesomeIcon
                   size="1x"
                   icon={faLinkedin}
