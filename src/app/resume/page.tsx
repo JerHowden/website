@@ -9,7 +9,10 @@ export const metadata: Metadata = {
 
 export default function ResumePage() {
   return (
-    <Container maxWidth="md">
+    <Container
+      maxWidth="md"
+      sx={{ px: 4 }}
+    >
       <Resume />
     </Container>
   )

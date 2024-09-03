@@ -101,6 +101,7 @@ const scales = [
   SCALE_FACTOR ** -3,
   SCALE_FACTOR ** -2,
   SCALE_FACTOR ** -1,
+  1,
   SCALE_FACTOR,
   SCALE_FACTOR ** 2,
   SCALE_FACTOR ** 3,

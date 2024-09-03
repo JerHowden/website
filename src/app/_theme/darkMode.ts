@@ -28,15 +28,15 @@ export const darkMode: ThemeOptions = {
         html: {
           backgroundColor: '#2C3A35',
           background: `url(${topo.src})`,
+          maxHeight: '100vh',
         },
         body: {
-          width: '100%',
-          height: '100%',
-          minHeight: '100%',
-          margin: 0,
-          padding: 0,
+          minHeight: '100vh',
           color: 'rgba(255, 255, 255, 0.9)',
           transition: 'background-color 250ms ease-in-out',
+        },
+        a: {
+          color: 'rgba(255, 255, 255, 0.9)',
         },
       },
     },
