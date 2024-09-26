@@ -1,20 +1,17 @@
-import type { Metadata } from 'next'
-
-import Projects from '@/components/_legacy/Projects'
-import About from '@/components/_legacy/About'
-import { Container, Stack, Typography } from '@mui/material'
-import { Spotify } from '@/components'
+import { HEADER_SIZE } from '@/lib';
+import { Container, Stack, Typography } from '@mui/material';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Jeremiah Howden',
   description: 'Homepage',
-}
+};
 
 export default function Home() {
   return (
     <Container
       maxWidth="md"
-      sx={{ px: 4 }}
+      sx={{ px: 4, py: 8, minHeight: `calc(100% - ${HEADER_SIZE}px)` }}
     >
       <Stack
         direction="column"
@@ -28,5 +25,5 @@ export default function Home() {
         </Typography>
       </Stack>
     </Container>
-  )
+  );
 }

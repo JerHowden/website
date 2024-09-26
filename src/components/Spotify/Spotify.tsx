@@ -1,24 +1,24 @@
-'use client'
+'use client';
 
-import { faSpotify } from '@fortawesome/free-brands-svg-icons'
-import { faImage, faImagePortrait, faRecordVinyl } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Box, Card, Collapse, keyframes, Stack, SxProps, Typography } from '@mui/material'
-import Image from 'next/image'
-import useSWR from 'swr'
+import { faSpotify } from '@fortawesome/free-brands-svg-icons';
+import { faImage, faImagePortrait, faRecordVinyl } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Box, Card, Collapse, keyframes, Stack, SxProps, Typography } from '@mui/material';
+import Image from 'next/image';
+import useSWR from 'swr';
 
 const pulse = keyframes`
   50% {
     opacity: .5;
   }
-`
+`;
 
 type SpotifyProps = {
-  size: 'medium' | 'large'
-}
+  size: 'medium' | 'large';
+};
 
 export function Spotify({ size }: SpotifyProps) {
-  const { data, isLoading, error } = useSWR('/api/spotify')
+  const { data, isLoading, error } = useSWR('/api/spotify');
 
   const cardSx: SxProps = {
     cursor: 'pointer',
@@ -34,11 +34,11 @@ export function Spotify({ size }: SpotifyProps) {
     ...(size === 'large'
       ? {
           p: 4,
-          backgroundColor: data?.isPlaying ? '#1DB954' : 'text.disabled',
+          backgroundColor: data?.isPlaying ? '#1DB954' : 'background.paper',
           borderRadius: 2,
         }
       : {}),
-  }
+  };
 
   return (
     <a
@@ -143,5 +143,5 @@ export function Spotify({ size }: SpotifyProps) {
         </Stack>
       </Card>
     </a>
-  )
+  );
 }

@@ -1,40 +1,49 @@
-'use client'
+'use client';
 
-import { faBars } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Box, Collapse, Container, IconButton, Stack, useMediaQuery, useTheme } from '@mui/material'
-import { useEffect, useState } from 'react'
-import { Link } from '../Link'
-import { MobileDrawer } from './MobileDrawer'
-import { Spotify } from '../Spotify'
+import { HEADER_SIZE } from '@/lib';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  Box,
+  Collapse,
+  Container,
+  IconButton,
+  Stack,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
+import { useEffect, useState } from 'react';
+import { Link } from '../Link';
+import { Spotify } from '../Spotify';
+import { MobileDrawer } from './MobileDrawer';
 
 export function Header() {
-  const theme = useTheme()
-  const loaded = useMediaQuery(theme.breakpoints.up(0))
-  const mobile = useMediaQuery(theme.breakpoints.down('sm'))
+  const theme = useTheme();
+  const loaded = useMediaQuery(theme.breakpoints.up(0));
+  const mobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const [actions, setActions] = useState<'links' | 'menu' | null>(null)
-  const [drawerOpen, setDrawerOpen] = useState(false)
-  const [backdropBlur, setBackdropBlur] = useState(0) //window ? Math.min(window.scrollY / 8, 8) : 0
+  const [actions, setActions] = useState<'links' | 'menu' | null>(null);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [backdropBlur, setBackdropBlur] = useState(0); //window ? Math.min(window.scrollY / 8, 8) : 0
 
   useEffect(() => {
     function onScroll() {
-      setBackdropBlur(Math.min(window.scrollY / 8, 8))
+      setBackdropBlur(Math.min(window.scrollY / 8, 8));
     }
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   useEffect(() => {
-    setActions(() => null)
+    setActions(() => null);
     if (loaded) {
       if (mobile) {
-        setTimeout(() => setActions(() => 'menu'), 300)
+        setTimeout(() => setActions(() => 'menu'), 300);
       } else {
-        setTimeout(() => setActions(() => 'links'), 300)
+        setTimeout(() => setActions(() => 'links'), 300);
       }
     }
-  }, [loaded, mobile])
+  }, [loaded, mobile]);
 
   return (
     <Box
@@ -55,7 +64,7 @@ export function Header() {
         <Stack
           direction="row"
           flexWrap="nowrap"
-          height={80}
+          height={HEADER_SIZE}
           alignItems="center"
           justifyContent="space-between"
           gap={5}
@@ -140,5 +149,5 @@ export function Header() {
         />
       </Container>
     </Box>
-  )
+  );
 }
