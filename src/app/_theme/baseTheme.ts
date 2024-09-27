@@ -1,91 +1,91 @@
-import { ThemeOptions } from '@mui/material'
-import { Montserrat } from 'next/font/google'
-import { CSSProperties } from 'react'
+import { ThemeOptions } from '@mui/material';
+import { Montserrat } from 'next/font/google';
+import { CSSProperties } from 'react';
 
 declare module '@mui/material/styles' {
   interface TypographyVariants {
-    display1: CSSProperties
-    display1Emphasis: CSSProperties
-    display2: CSSProperties
-    display2Emphasis: CSSProperties
-    title1: CSSProperties
-    title1Emphasis: CSSProperties
-    title2: CSSProperties
-    title2Emphasis: CSSProperties
-    title3: CSSProperties
-    title3Emphasis: CSSProperties
-    heading: CSSProperties
-    headingEmphasis: CSSProperties
-    subheading: CSSProperties
-    subheadingEmphasis: CSSProperties
-    body1Emphasis: CSSProperties
-    body2Emphasis: CSSProperties
-    label: CSSProperties
-    labelEmphasis: CSSProperties
-    captionEmphasis: CSSProperties
-    overlineEmphasis: CSSProperties
+    display1: CSSProperties;
+    display1Emphasis: CSSProperties;
+    display2: CSSProperties;
+    display2Emphasis: CSSProperties;
+    title1: CSSProperties;
+    title1Emphasis: CSSProperties;
+    title2: CSSProperties;
+    title2Emphasis: CSSProperties;
+    title3: CSSProperties;
+    title3Emphasis: CSSProperties;
+    heading: CSSProperties;
+    headingEmphasis: CSSProperties;
+    subheading: CSSProperties;
+    subheadingEmphasis: CSSProperties;
+    body1Emphasis: CSSProperties;
+    body2Emphasis: CSSProperties;
+    label: CSSProperties;
+    labelEmphasis: CSSProperties;
+    captionEmphasis: CSSProperties;
+    overlineEmphasis: CSSProperties;
   }
 
   // allow configuration using `createTheme`
   interface TypographyVariantsOptions {
-    display1?: CSSProperties
-    display1Emphasis?: CSSProperties
-    display2?: CSSProperties
-    display2Emphasis?: CSSProperties
-    title1?: CSSProperties
-    title1Emphasis?: CSSProperties
-    title2?: CSSProperties
-    title2Emphasis?: CSSProperties
-    title3?: CSSProperties
-    title3Emphasis?: CSSProperties
-    heading?: CSSProperties
-    headingEmphasis?: CSSProperties
-    subheading?: CSSProperties
-    subheadingEmphasis?: CSSProperties
-    body1Emphasis?: CSSProperties
-    body2Emphasis?: CSSProperties
-    label?: CSSProperties
-    labelEmphasis?: CSSProperties
-    captionEmphasis?: CSSProperties
-    overlineEmphasis?: CSSProperties
+    display1?: CSSProperties;
+    display1Emphasis?: CSSProperties;
+    display2?: CSSProperties;
+    display2Emphasis?: CSSProperties;
+    title1?: CSSProperties;
+    title1Emphasis?: CSSProperties;
+    title2?: CSSProperties;
+    title2Emphasis?: CSSProperties;
+    title3?: CSSProperties;
+    title3Emphasis?: CSSProperties;
+    heading?: CSSProperties;
+    headingEmphasis?: CSSProperties;
+    subheading?: CSSProperties;
+    subheadingEmphasis?: CSSProperties;
+    body1Emphasis?: CSSProperties;
+    body2Emphasis?: CSSProperties;
+    label?: CSSProperties;
+    labelEmphasis?: CSSProperties;
+    captionEmphasis?: CSSProperties;
+    overlineEmphasis?: CSSProperties;
   }
 }
 
 // Update the Typography's variant prop options
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
-    display1: true
-    display1Emphasis: true
-    display2: true
-    display2Emphasis: true
-    title1: true
-    title1Emphasis: true
-    title2: true
-    title2Emphasis: true
-    title3: true
-    title3Emphasis: true
-    heading: true
-    headingEmphasis: true
-    subheading: true
-    subheadingEmphasis: true
-    body1: true
-    body1Emphasis: true
-    body2: true
-    body2Emphasis: true
-    label: true
-    labelEmphasis: true
-    caption: true
-    captionEmphasis: true
-    overline: true
-    overlineEmphasis: true
-    h1: false
-    h2: false
-    h3: false
-    h4: false
-    h5: false
-    h6: false
-    subtitle1: false
-    subtitle2: false
+    display1: true;
+    display1Emphasis: true;
+    display2: true;
+    display2Emphasis: true;
+    title1: true;
+    title1Emphasis: true;
+    title2: true;
+    title2Emphasis: true;
+    title3: true;
+    title3Emphasis: true;
+    heading: true;
+    headingEmphasis: true;
+    subheading: true;
+    subheadingEmphasis: true;
+    body1: true;
+    body1Emphasis: true;
+    body2: true;
+    body2Emphasis: true;
+    label: true;
+    labelEmphasis: true;
+    caption: true;
+    captionEmphasis: true;
+    overline: true;
+    overlineEmphasis: true;
+    h1: false;
+    h2: false;
+    h3: false;
+    h4: false;
+    h5: false;
+    h6: false;
+    subtitle1: false;
+    subtitle2: false;
   }
 }
 
@@ -93,9 +93,9 @@ const montserrat = Montserrat({
   weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
   display: 'swap',
-})
+});
 
-const SCALE_FACTOR = 1.618 as const
+const SCALE_FACTOR = 1.618 as const;
 const scales = [
   0,
   SCALE_FACTOR ** -3,
@@ -106,7 +106,7 @@ const scales = [
   SCALE_FACTOR ** 2,
   SCALE_FACTOR ** 3,
   SCALE_FACTOR ** 4,
-].map((scale) => `${scale}em`)
+].map((scale) => `${scale}em`);
 
 /**
  * Custom theme for jeremiahhowden.com
@@ -303,39 +303,4 @@ export const baseTheme: ThemeOptions = {
     subtitle1: undefined,
     subtitle2: undefined,
   },
-  components: {
-    MuiButton: {
-      // styleOverrides: {
-      //   root: {
-      //     flexDirection: 'row',
-      //     alignItems: 'center',
-      //     lineHeight: 1,
-      //   },
-      //   sizeLarge: {
-      //     fontSize: '1em',
-      //   },
-      //   sizeMedium: {
-      //     fontSize: '0.943em',
-      //   },
-      //   sizeSmall: {
-      //     fontSize: '0.835em',
-      //   },
-      //   iconSizeLarge: {
-      //     // width: '1.272em',
-      //     marginRight: 6,
-      //     marginLeft: -4,
-      //   },
-      //   iconSizeMedium: {
-      //     // width: '1.129em',
-      //     marginRight: 5,
-      //     marginLeft: -2,
-      //   },
-      //   iconSizeSmall: {
-      //     // width: '1em',
-      //     marginRight: 4,
-      //     marginLeft: -0.5,
-      //   },
-      // },
-    },
-  },
-} as const
+} as const;

@@ -1,24 +1,24 @@
-'use client'
+'use client';
 
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faFileLines } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Divider, Stack, SwipeableDrawer } from '@mui/material'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { useMemo } from 'react'
-import { Spotify } from '../Spotify'
-import { LogoLink } from './LogoLink'
+import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { faFileLines } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Divider, Stack, SwipeableDrawer } from '@mui/material';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useMemo } from 'react';
+import { Spotify } from '../Spotify';
+import { LogoLink } from './LogoLink';
 
 type MobileDrawerProps = {
-  open: boolean
-  setOpen: (newOpen: boolean) => void
-}
+  open: boolean;
+  setOpen: (newOpen: boolean) => void;
+};
 
 export function MobileDrawer({ open, setOpen }: MobileDrawerProps) {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
-  const onResume = useMemo(() => pathname === '/resume', [pathname])
+  const onResume = useMemo(() => pathname === '/resume', [pathname]);
 
   return (
     <SwipeableDrawer
@@ -27,13 +27,20 @@ export function MobileDrawer({ open, setOpen }: MobileDrawerProps) {
       onOpen={() => {}}
       anchor="bottom"
       variant="temporary"
+      sx={{ overflow: 'hidden', maxWidth: '100vw' }}
       ModalProps={{
         keepMounted: true,
         sx: {
+          maxWidth: '100vw',
+          '& .MuiBackdrop-root': {
+            maxWidth: '100vw',
+          },
           '& .MuiDrawer-paperAnchorBottom': {
             backgroundColor: 'background.default',
             backgroundImage: 'none',
             backdropFilter: 'blur(8px)',
+            overflowX: 'hidden',
+            maxWidth: '100vw',
           },
         },
       }}
@@ -41,6 +48,7 @@ export function MobileDrawer({ open, setOpen }: MobileDrawerProps) {
       <Stack
         direction="column"
         flexWrap="nowrap"
+        overflow="hidden"
         gap={5}
         px={4}
         py={5}
@@ -64,7 +72,7 @@ export function MobileDrawer({ open, setOpen }: MobileDrawerProps) {
             >
               <FontAwesomeIcon
                 icon={faGithub}
-                size="3x"
+                size="2x"
                 style={{ aspectRatio: '1 / 1' }}
               />
             </LogoLink>
@@ -81,8 +89,8 @@ export function MobileDrawer({ open, setOpen }: MobileDrawerProps) {
               title="LinkedIn"
             >
               <FontAwesomeIcon
-                icon={faLinkedin}
-                size="3x"
+                icon={faLinkedinIn}
+                size="2x"
                 style={{ aspectRatio: '1 / 1' }}
               />
             </LogoLink>
@@ -103,7 +111,7 @@ export function MobileDrawer({ open, setOpen }: MobileDrawerProps) {
             >
               <FontAwesomeIcon
                 icon={faFileLines}
-                size="3x"
+                size="2x"
                 style={{ aspectRatio: '1 / 1' }}
               />
             </LogoLink>
@@ -111,5 +119,5 @@ export function MobileDrawer({ open, setOpen }: MobileDrawerProps) {
         </Stack>
       </Stack>
     </SwipeableDrawer>
-  )
+  );
 }

@@ -1,10 +1,10 @@
-import '@fortawesome/fontawesome-svg-core/styles.css'
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
-import { Footer, Header } from '@/components'
-import { Stack } from '@mui/material'
-import { Metadata } from 'next'
-import { ReactNode } from 'react'
-import { Providers } from './_providers'
+import { Footer, Header } from '@/components';
+import { Stack } from '@mui/material';
+import { Metadata } from 'next';
+import { ReactNode } from 'react';
+import { Providers } from './_providers';
 
 export const metadata: Metadata = {
   title: 'Jeremiah Howden',
@@ -40,11 +40,11 @@ export const metadata: Metadata = {
     title: 'Jeremiah Howden',
     description: "Jeremiah Howden's Portfolio Site",
   },
-}
+};
 
 type RootLayoutProps = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
@@ -54,16 +54,22 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Stack
             direction="column"
             display="flex"
-            minHeight="100vh"
             alignItems="center"
             justifyContent="space-between"
           >
             <Header />
-            {children}
+            <Stack
+              direction="column"
+              display="flex"
+              minHeight="100vh"
+              alignItems="flex-start"
+            >
+              {children}
+            </Stack>
             <Footer />
           </Stack>
         </body>
       </html>
     </Providers>
-  )
+  );
 }

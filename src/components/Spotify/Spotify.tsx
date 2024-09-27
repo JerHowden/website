@@ -1,24 +1,31 @@
-'use client'
+'use client';
 
-import { faSpotify } from '@fortawesome/free-brands-svg-icons'
-import { faImage, faImagePortrait, faRecordVinyl } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Box, Card, Collapse, keyframes, Stack, SxProps, Typography } from '@mui/material'
-import Image from 'next/image'
-import useSWR from 'swr'
+import { faSpotify } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Box, Card, Collapse, keyframes, Stack, SxProps, Typography } from '@mui/material';
+import Image from 'next/image';
+import { useEffect } from 'react';
+import useSWR from 'swr';
+import { OverflowText } from './OverflowText';
+import { SpotifyNowPlaying } from './types';
 
 const pulse = keyframes`
   50% {
     opacity: .5;
   }
-`
+`;
 
 type SpotifyProps = {
-  size: 'medium' | 'large'
-}
+  size: 'medium' | 'large';
+};
 
 export function Spotify({ size }: SpotifyProps) {
-  const { data, isLoading, error } = useSWR('/api/spotify')
+  const {
+    data,
+    isLoading,
+    error,
+  }: { data: SpotifyNowPlaying | undefined; isLoading: boolean; error: any } =
+    useSWR('/api/spotify');
 
   const cardSx: SxProps = {
     cursor: 'pointer',
@@ -34,18 +41,18 @@ export function Spotify({ size }: SpotifyProps) {
     ...(size === 'large'
       ? {
           p: 4,
-          backgroundColor: data?.isPlaying ? '#1DB954' : 'text.disabled',
+          backgroundColor: data?.isPlaying ? '#1DB954' : 'background.paper',
           borderRadius: 2,
         }
       : {}),
-  }
+  };
 
   return (
     <a
-      href={data?.songURL}
+      href={data?.linkURL}
       style={{
         textDecoration: 'none',
-        pointerEvents: data?.isPlaying && data?.songURL ? 'all' : 'none',
+        pointerEvents: data?.isPlaying && data?.linkURL ? 'all' : 'none',
       }}
     >
       <Card sx={cardSx}>
@@ -59,6 +66,12 @@ export function Spotify({ size }: SpotifyProps) {
             in={data?.isPlaying}
             orientation="horizontal"
             unmountOnExit
+            sx={{
+              overflow: 'hidden',
+              '& .MuiCollapse-wrapperInner': {
+                overflow: 'hidden',
+              },
+            }}
           >
             <Stack
               direction="row"
@@ -66,32 +79,34 @@ export function Spotify({ size }: SpotifyProps) {
               alignItems="center"
             >
               <Image
-                src={data?.albumImageURL}
+                src={data?.imageURL ?? ''}
                 width={size === 'medium' ? 36 : 50}
                 height={size === 'medium' ? 36 : 50}
                 alt={data?.album ?? 'Album Art'}
                 style={{ borderRadius: 2 }}
-                title={`Album - ${data?.album}`}
+                title={`${data?.album}`}
               />
               <Stack
                 direction="column"
                 justifyContent="space-evenly"
+                overflow="hidden"
               >
-                <Typography
+                <OverflowText
                   variant="body1Emphasis"
                   color="textPrimary"
-                  title={`Song - ${data?.title}`}
-                  sx={{ whiteSpace: 'pre' }}
+                  title={`${data?.title}`}
+                  lineHeight={1}
                 >
                   {data?.title}
-                </Typography>
-                <Typography
+                </OverflowText>
+                <OverflowText
                   variant="label"
                   color="textSecondary"
-                  title={`Artist - ${data?.artist}`}
+                  title={`${data?.artist}`}
+                  lineHeight={1}
                 >
                   {data?.artist}
-                </Typography>
+                </OverflowText>
               </Stack>
             </Stack>
           </Collapse>
@@ -143,5 +158,5 @@ export function Spotify({ size }: SpotifyProps) {
         </Stack>
       </Card>
     </a>
-  )
+  );
 }

@@ -1,52 +1,54 @@
-import { getNowPlaying } from './api'
+import { SpotifyNowPlaying } from '@/components';
+import { getNowPlaying } from './api';
 
-export const revalidate = 30
-
-type SpotifySong = {
-  isPlaying: boolean
-  artist: string
-  album: string
-  albumImageURL: string
-  title: string
-  songURL: string
-}
+export const revalidate = 30;
 
 export async function GET() {
-  const nowPlaying = await getNowPlaying()
-  // console.log('\n --- now playing response ---\n', nowPlaying, '\n')
+  const nowPlayingCall = await getNowPlaying();
+  // console.log('\n --- now playing response ---\n', nowPlayingCall, '\n');
 
-  if (!nowPlaying.ok || nowPlaying.status === 204) {
-    return Response.json(nowPlaying)
+  if (!nowPlayingCall.ok || nowPlayingCall.status === 204) {
+    return Response.json(nowPlayingCall);
   }
 
-  const song = await nowPlaying.json()
-  // console.log('\n --- song ---\n', song, '\n')
+  const nowPlaying = await nowPlayingCall.json();
+  // console.log('\n --- song ---\n', nowPlaying, '\n');
 
-  if (!song.item && !song.currently_playing_type) {
-    // console.log('\nNot playing anything in now-playing.ts\n', nowPlaying)
-    return Response.json({ isPlaying: false })
+  if (!nowPlaying.is_playing || (!nowPlaying.item && !nowPlaying.currently_playing_type)) {
+    // console.log('\nNot playing anything in now-playing.ts\n', nowPlayingCall);
+    return Response.json({ isPlaying: false });
   }
 
-  const isPlaying = song.is_playing
-  let title = song.item?.name
-  let artist = song.item?.artists.map((artist: { name: string }) => artist.name).join(', ')
-  const album = song.item.album.name
-  const albumImageURL = song.item.album.images[0].url
-  const songURL = song.item?.external_urls.spotify
+  let body: SpotifyNowPlaying = {
+    isPlaying: false,
+    artist: '',
+    album: '',
+    imageURL: '',
+    title: '',
+    linkURL: '',
+  };
 
-  if (isPlaying && song.currently_playing_type === 'episode') {
-    title = 'Listening to a Podcast'
-    artist = 'on Spotify'
+  if (nowPlaying.currently_playing_type === 'track') {
+    body = {
+      isPlaying: nowPlaying.is_playing,
+      artist: nowPlaying.item?.artists.map((artist: { name: string }) => artist.name).join(', '),
+      album: nowPlaying.item?.album.name,
+      imageURL: nowPlaying.item?.album.images[0].url,
+      title: nowPlaying.item?.name,
+      linkURL: nowPlaying.item?.external_urls.spotify,
+    };
   }
 
-  const body: SpotifySong = {
-    isPlaying,
-    artist,
-    album,
-    albumImageURL,
-    title,
-    songURL,
+  if (nowPlaying.currently_playing_type === 'episode') {
+    body = {
+      isPlaying: nowPlaying.is_playing,
+      artist: nowPlaying.item?.show.name,
+      album: '',
+      imageURL: nowPlaying.item?.show.images[0].url,
+      title: nowPlaying.item?.name,
+      linkURL: nowPlaying.item?.external_urls.spotify,
+    };
   }
 
-  return Response.json(body)
+  return Response.json(body);
 }

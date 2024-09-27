@@ -18,7 +18,7 @@ export function LogoLink({ children, title, disabled, ...props }: LogoLinkProps)
         variant="contained"
         sx={{
           color: (theme) => theme.palette.text.primary,
-          backgroundColor: (theme) => theme.palette.text.disabled,
+          backgroundColor: (theme) => theme.palette.primary.main,
           borderRadius: 2,
         }}
         disabled={disabled}
