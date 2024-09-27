@@ -24,7 +24,7 @@ export function Header() {
 
   const [actions, setActions] = useState<'links' | 'menu' | null>(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [backdropBlur, setBackdropBlur] = useState(0); //window ? Math.min(window.scrollY / 8, 8) : 0
+  const [backdropBlur, setBackdropBlur] = useState(window ? Math.min(window.scrollY / 8, 8) : 0);
 
   useEffect(() => {
     function onScroll() {
@@ -67,7 +67,10 @@ export function Header() {
           height={HEADER_SIZE}
           alignItems="center"
           justifyContent="space-between"
-          gap={5}
+          gap={{
+            xs: 4,
+            md: 8,
+          }}
         >
           <Link
             href="/"
@@ -77,7 +80,15 @@ export function Header() {
           >
             jeremiahhowden
           </Link>
-          <Collapse in={actions === 'links'}>
+          <Collapse
+            in={actions === 'links'}
+            sx={{
+              overflow: 'hidden',
+              '& .MuiCollapse-wrapperInner': {
+                overflow: 'hidden',
+              },
+            }}
+          >
             <Spotify size="medium" />
           </Collapse>
           <Box

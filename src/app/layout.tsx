@@ -57,13 +57,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
             alignItems="center"
             justifyContent="space-between"
           >
+            <Header />
             <Stack
               direction="column"
               display="flex"
               minHeight="100vh"
               alignItems="flex-start"
             >
-              <Header />
               {children}
             </Stack>
             <Footer />
