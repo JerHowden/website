@@ -24,7 +24,7 @@ export function Header() {
 
   const [actions, setActions] = useState<'links' | 'menu' | null>(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [backdropBlur, setBackdropBlur] = useState(window ? Math.min(window.scrollY / 8, 8) : 0);
+  const [backdropBlur, setBackdropBlur] = useState(0); // window ? Math.min(window.scrollY / 8, 8) : 0
 
   useEffect(() => {
     function onScroll() {
