@@ -67,11 +67,13 @@ export function OverflowText({ children, ...rest }: TypographyProps) {
               animation: boundary ? `${bounce} 15s linear infinite` : '',
               whiteSpace: 'nowrap',
               width: 'fit-content',
+              height: 'fit-content',
               paddingInlineStart: '6px',
             }}
           >
             <Typography
               {...rest}
+              lineHeight={1}
               sx={{ textWrap: 'nowrap' }}
             >
               {children}

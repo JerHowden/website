@@ -1,8 +1,8 @@
-import { Divider, Stack, Typography } from '@mui/material'
+import { Divider, Stack, Typography } from '@mui/material';
 
 type HeaderProps = {
-  title: string
-}
+  title: string;
+};
 
 export function Header({ title }: HeaderProps) {
   return (
@@ -16,7 +16,12 @@ export function Header({ title }: HeaderProps) {
       >
         {title}
       </Typography>
-      <Divider variant="fullWidth" />
+      <Divider
+        variant="fullWidth"
+        sx={{
+          borderColor: 'primary.main',
+        }}
+      />
     </Stack>
-  )
+  );
 }

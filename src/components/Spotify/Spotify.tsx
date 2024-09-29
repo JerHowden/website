@@ -88,7 +88,7 @@ export function Spotify({ size }: SpotifyProps) {
               />
               <Stack
                 direction="column"
-                justifyContent="space-evenly"
+                justifyContent="center"
                 overflow="hidden"
               >
                 <OverflowText

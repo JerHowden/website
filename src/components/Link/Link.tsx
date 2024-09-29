@@ -1,22 +1,23 @@
-import { Typography, TypographyProps } from '@mui/material'
-import NextLink, { LinkProps as NextLinkProps } from 'next/link'
-import { AnchorHTMLAttributes, DetailedHTMLProps, ReactNode, useMemo } from 'react'
+import { Typography, TypographyProps } from '@mui/material';
+import NextLink, { LinkProps as NextLinkProps } from 'next/link';
+import { AnchorHTMLAttributes, DetailedHTMLProps, ReactNode, useMemo } from 'react';
 
-type AnchorProps = DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>
+type AnchorProps = DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>;
 
 type LinkProps = (
   | (NextLinkProps & {
-      external?: false
+      external?: false;
     })
   | (AnchorProps & {
-      external: true
+      external: true;
     })
 ) & {
-  children: ReactNode
-  TypographyProps?: TypographyProps
-}
+  children: ReactNode;
+  inline?: boolean;
+  TypographyProps?: TypographyProps;
+};
 
-export function Link({ children, external, TypographyProps, ...props }: LinkProps) {
+export function Link({ children, external, inline, TypographyProps, ...props }: LinkProps) {
   const text = useMemo(
     () => (
       <Typography
@@ -40,16 +41,17 @@ export function Link({ children, external, TypographyProps, ...props }: LinkProp
           },
         }}
         color="text.primary"
+        lineHeight={inline ? 1 : undefined}
         {...TypographyProps}
       >
         {children}
       </Typography>
     ),
     [children, TypographyProps]
-  )
+  );
 
   if (external) {
-    return <a {...(props as AnchorProps)}>{text}</a>
+    return <a {...(props as AnchorProps)}>{text}</a>;
   }
 
   return (
@@ -61,5 +63,5 @@ export function Link({ children, external, TypographyProps, ...props }: LinkProp
     >
       {text}
     </NextLink>
-  )
+  );
 }

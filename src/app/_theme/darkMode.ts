@@ -1,5 +1,5 @@
-import { ThemeOptions } from '@mui/material'
-import topo from '../../../public/backgrounds/topo.jpg'
+import { ThemeOptions } from '@mui/material';
+import topo from '../../../public/backgrounds/topo.jpg';
 
 export const darkMode: ThemeOptions = {
   palette: {
@@ -9,15 +9,15 @@ export const darkMode: ThemeOptions = {
       contrastText: 'rgba(255,255,255,0.9)',
     },
     secondary: {
-      main: '#A0642C',
+      main: '#849A87',
     },
     background: {
       default: '#2C3A35FA',
-      paper: '#536555',
+      paper: '#40544D',
     },
     text: {
-      primary: 'rgba(255, 255, 255, 0.9)',
-      secondary: 'rgba(255, 255, 255, 0.7)',
+      primary: 'rgba(255, 255, 255, 0.95)',
+      secondary: '#D2DAD3E0',
       disabled: 'rgba(255, 255, 255, 0.35)',
     },
     divider: 'rgba(255, 255, 255, 0.35)',
@@ -35,6 +35,7 @@ export const darkMode: ThemeOptions = {
           minHeight: '100vh',
           color: 'rgba(255, 255, 255, 0.9)',
           transition: 'background-color 250ms ease-in-out',
+          boxShadow: ' inset 0 0 5em 1em #00000040',
         },
         a: {
           color: 'rgba(255, 255, 255, 0.9)',
@@ -43,4 +44,4 @@ export const darkMode: ThemeOptions = {
       },
     },
   },
-} as const
+} as const;
